@@ -16,16 +16,6 @@ El objetivo era aplicar HTML5 semántico, CSS3 avanzado y JavaScript sin librer�
 
 ---
 
-## Cómo usarlo
-
-No requiere instalación ni servidor. Abrí `index.html` directamente en el navegador,
-o usá la extensión Live Server de VS Code para verlo con recarga automática.
-
-Las imágenes están en la carpeta `assets/`. Los íconos vienen de Google Material Icons
-cargados por CDN, así que necesitás conexión a internet la primera vez.
-
----
-
 ## Decisiones de diseño
 
 Se uso variables css, para estandarizar las propiedades como colores, medidas, etc.
