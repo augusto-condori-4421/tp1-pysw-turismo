@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactá a ViajesMundo. Formulario con validación en tiempo real para consultas y reservas.">
+    <title>Contacto — ViajesMundo</title>
+    <link rel="icon" href="assets/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+    <div class="header__inner container">
+        <div class="header__brand">
+            <a href="index.html" class="brand__logo" aria-label="ViajesMundo - Inicio">
+                    <img src="assets/logo.webp" alt="ViajesMundo" class="brand__logo-img">
+                <div class="brand__icon" aria-hidden="true"><span class="material-icons-round">flight</span></div>
+                <span class="brand__name">Viajes<span>Mundo</span></span>
+            </a>
+        </div>
+        <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="destinos.html" class="nav__link">Destinos <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu"><div class="mega-menu__col"><h4>Por Tipo</h4><ul><li><a href="destinos.html">Cultural</a></li><li><a href="destinos.html">Naturaleza</a></li><li><a href="destinos.html">Sol y Playa</a></li></ul></div><div class="mega-menu__col"><h4>Por Región</h4><ul><li><a href="destinos.html">América del Sur</a></li><li><a href="destinos.html">América Central</a></li><li><a href="destinos.html">El Caribe</a></li></ul></div><div class="mega-menu__col"><h4>Populares</h4><ul><li><a href="destinos.html">Machu Picchu</a></li><li><a href="destinos.html">Patagonia</a></li><li><a href="destinos.html">Cataratas</a></li></ul></div></div>
+                </li>
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="agencias.html" class="nav__link">Agencias <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu mega-menu--sm"><div class="mega-menu__col"><h4>Nuestros Agentes</h4><ul><li><a href="agencias.html">Ver todos</a></li><li><a href="agencias.html">Mejor calificados</a></li></ul></div><div class="mega-menu__col"><h4>Servicios</h4><ul><li><a href="agencias.html">Paquetes armados</a></li><li><a href="agencias.html">Viajes a medida</a></li></ul></div></div>
+                </li>
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="precios.html" class="nav__link">Precios <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu mega-menu--sm"><div class="mega-menu__col"><h4>Planes</h4><ul><li><a href="precios.html">Plan Básico</a></li><li><a href="precios.html">Plan Premium</a></li><li><a href="precios.html">Plan Élite</a></li></ul></div><div class="mega-menu__col"><h4>Comparar</h4><ul><li><a href="precios.html">Comparador de destinos</a></li><li><a href="precios.html">Ofertas del mes</a></li></ul></div></div>
+                </li>
+                <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                <li class="nav__item"><a href="contacto.html" class="nav__link active">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header__actions">
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Activar modo oscuro">
+                <span class="material-icons-round" id="toggleIcon">dark_mode</span>
+            </button>
+            <a href="contacto.html" class="btn btn--primary btn--sm">Reservar ahora</a>
+        </div>
+        <button class="nav__hamburger" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<div class="header-spacer"></div>
+
+<section class="page-hero" aria-label="Encabezado">
+    <div class="container">
+        <h1>Contactanos</h1>
+        <p>Estamos aquí para ayudarte a planificar el viaje de tus sueños. Te respondemos en menos de 24 hs.</p>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="form-title">
+    <div class="container">
+        <div class="contact-wrapper">
+
+            <aside class="contact-info" aria-label="Información de contacto">
+                <h3>Información de Contacto</h3>
+                <p>Podés comunicarte con nosotros por cualquiera de estos medios o completar el formulario.</p>
+                <ul class="contact-details">
+                    <li>
+                        <div class="detail-icon" aria-hidden="true">
+                            <span class="material-icons-round">location_on</span>
+                        </div>
+                        <div><strong>Dirección</strong><br>Av. Belgrano 1500, San Salvador de Jujuy</div>
+                    </li>
+                    <li>
+                        <div class="detail-icon" aria-hidden="true">
+                            <span class="material-icons-round">call</span>
+                        </div>
+                        <div><strong>Teléfono</strong><br>(388) 422-1000</div>
+                    </li>
+                    <li>
+                        <div class="detail-icon" aria-hidden="true">
+                            <span class="material-icons-round">email</span>
+                        </div>
+                        <div><strong>Email</strong><br>info@viajesmundo.com</div>
+                    </li>
+                    <li>
+                        <div class="detail-icon" aria-hidden="true">
+                            <span class="material-icons-round">schedule</span>
+                        </div>
+                        <div><strong>Horario de atención</strong><br>Lun–Vie: 8:00 – 18:00 hs<br>Sáb: 9:00 – 13:00 hs</div>
+                    </li>
+                </ul>
+                <nav aria-label="Redes sociales"><ul class="social-links">
+                    <li><a href="#" class="social-link" aria-label="Facebook">f</a></li>
+                    <li><a href="#" class="social-link" aria-label="Instagram"><span class="material-icons-round">photo_camera</span></a></li>
+                    <li><a href="#" class="social-link" aria-label="WhatsApp"><span class="material-icons-round">chat</span></a></li>
+                </ul></nav>
+            </aside>
+
+            <div class="contact-form">
+                <h3 id="form-title">Envianos tu consulta</h3>
+                <form id="contactForm" novalidate aria-labelledby="form-title">
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="nombre" class="form-label">Nombre <span class="required" aria-hidden="true">*</span></label>
+                            <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre" required minlength="2" aria-required="true" autocomplete="given-name">
+                            <span class="form-feedback form-feedback--error" role="alert">Ingresá tu nombre (mínimo 2 caracteres).</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="apellido" class="form-label">Apellido <span class="required" aria-hidden="true">*</span></label>
+                            <input type="text" id="apellido" name="apellido" class="form-input" placeholder="Tu apellido" required minlength="2" aria-required="true" autocomplete="family-name">
+                            <span class="form-feedback form-feedback--error" role="alert">Ingresá tu apellido.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email <span class="required" aria-hidden="true">*</span></label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com" required aria-required="true" autocomplete="email">
+                            <span class="form-feedback form-feedback--error" role="alert">Ingresá un email válido.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="+54 388 000-0000" autocomplete="tel">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="destino" class="form-label">Destino de interés</label>
+                            <select id="destino" name="destino" class="form-select">
+                                <option value="">Seleccioná un destino…</option>
+                                <option>Machu Picchu, Perú</option>
+                                <option>Patagonia, Argentina</option>
+                                <option>Río de Janeiro, Brasil</option>
+                                <option>Cataratas del Iguazú</option>
+                                <option>Buenos Aires, Argentina</option>
+                                <option>Cusco, Perú</option>
+                                <option>Otro destino</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="viajeros" class="form-label">Cantidad de viajeros</label>
+                            <select id="viajeros" name="viajeros" class="form-select">
+                                <option value="">Seleccioná…</option>
+                                <option>1 persona</option>
+                                <option>2 personas</option>
+                                <option>3 – 5 personas</option>
+                                <option>6 – 10 personas</option>
+                                <option>Más de 10</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group form-group--full">
+                            <label for="mensaje" class="form-label">Mensaje <span class="required" aria-hidden="true">*</span></label>
+                            <textarea id="mensaje" name="mensaje" class="form-textarea" placeholder="Contanos sobre el viaje que tenés en mente, fechas tentativas, presupuesto aproximado…" required minlength="10" aria-required="true"></textarea>
+                            <span class="form-feedback form-feedback--error" role="alert">Por favor escribí un mensaje (mínimo 10 caracteres).</span>
+                        </div>
+
+                        <div class="form-group form-group--full">
+                            <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer; font-size:0.875rem; color:var(--text-secondary);">
+                                <input type="checkbox" id="terminos" name="terminos" required aria-required="true" style="width:18px; height:18px; cursor:pointer; accent-color:var(--color-secondary);">
+                                Acepto los <a href="#" style="color:var(--color-secondary);">términos y condiciones</a> y la política de privacidad. <span class="required" aria-hidden="true">*</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-submit-area">
+                        <button type="submit" id="btnSubmit" class="btn btn--primary btn--lg btn-submit">
+                            <span class="btn-text">Enviar consulta</span>
+                            <span class="btn-spinner" aria-hidden="true"><span class="spinner-ring"></span></span>
+                        </button>
+                        <p style="font-size:0.8rem; color:var(--text-muted); margin:0;">* Campos obligatorios. Respondemos en menos de 24 hs hábiles.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- modal que aparece al enviar el formulario correctamente -->
+<div class="modal-overlay" id="modalConfirmacion" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+    <div class="modal">
+        <span class="modal__icon" aria-hidden="true">
+            <span class="material-icons-round" style="font-size:4rem; color:var(--color-success);">check_circle</span>
+        </span>
+        <h3 id="modalTitle">¡Consulta enviada!</h3>
+        <p>Recibimos tu mensaje. Un agente se pondrá en contacto con vos en menos de 24 hs hábiles.</p>
+        <button id="modalClose" class="btn btn--primary">Perfecto, gracias</button>
+    </div>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer__body">
+            <div class="footer__brand">
+                <a href="index.html" class="brand__logo" style="margin-bottom:1rem; display:inline-flex;">
+                        <img src="assets/logo.webp" alt="ViajesMundo" class="brand__logo-img">
+                    <div class="brand__icon" aria-hidden="true"><span class="material-icons-round">flight</span></div>
+                    <span class="brand__name">Viajes<span>Mundo</span></span>
+                </a>
+                <p>Tu compañía de confianza para explorar el mundo.</p>
+                <nav aria-label="Redes sociales"><ul class="social-links"><li><a href="#" class="social-link" aria-label="Facebook">f</a></li><li><a href="#" class="social-link" aria-label="Instagram"><span class="material-icons-round">photo_camera</span></a></li><li><a href="#" class="social-link" aria-label="Twitter">X</a></li><li><a href="#" class="social-link" aria-label="YouTube"><span class="material-icons-round">play_circle</span></a></li></ul></nav>
+            </div>
+            <div class="footer__col"><h5>Destinos</h5><ul><li><a href="destinos.html">Machu Picchu</a></li><li><a href="destinos.html">Patagonia</a></li><li><a href="destinos.html">Cataratas</a></li><li><a href="destinos.html">Río de Janeiro</a></li></ul></div>
+            <div class="footer__col"><h5>Empresa</h5><ul><li><a href="agencias.html">Agentes</a></li><li><a href="precios.html">Precios</a></li><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+            <div class="footer__newsletter"><h5>Newsletter</h5><p>Ofertas exclusivas en tu email.</p><form class="newsletter-form" novalidate><input type="email" placeholder="tu@email.com" required aria-label="Email"><button type="submit" class="btn btn--primary">Suscribirme</button></form><div class="newsletter-success" role="status">✓ ¡Gracias por suscribirte!</div></div>
+        </div>
+        <div class="footer__map"><h5>Encontranos</h5><div class="map-container"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-65.3200%2C-24.2100%2C-65.2900%2C-24.1800&layer=mapnik" title="Ubicación de nuestra oficina" loading="lazy" allowfullscreen></iframe></div></div>
+        <div class="footer__bottom"><p>© 2026 ViajesMundo. Todos los derechos reservados.</p><p>UNJu</p></div>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

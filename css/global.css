@@ -1,0 +1,377 @@
+/* global.css - estilos base y sistema de diseño del sitio
+   todo el proyecto depende de este archivo, cargarlo siempre primero */
+
+/* importar las fuentes de google - inter para texto normal, playfair para titulos */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* ====== variables css (custom properties) ======
+   si queres cambiar el tema del sitio, empieza aca
+   estas variables se usan en absolutamente todo el css */
+:root {
+    /* colores principales */
+    --color-primary:        #0B1C2D;   /* azul marino oscuro - el color de fondo del header */
+    --color-secondary:      #00B4D8;   /* cyan - botones, links activos, highlights */
+    --color-accent:         #F5A623;   /* dorado - precios, detalles importantes */
+    --color-danger:         #E63946;   /* rojo para errores de validacion */
+    --color-success:        #2DC653;   /* verde para confirmaciones */
+
+    /* fondos - estos cambian en dark mode */
+    --bg-body:              #F0F4F8;
+    --bg-surface:           #FFFFFF;        /* fondo de cards y paneles */
+    --bg-surface-alt:       #E8EFF7;        /* fondo alternado para secciones */
+
+    /* textos */
+    --text-primary:         #0B1C2D;
+    --text-secondary:       #4A5568;
+    --text-muted:           #718096;        /* texto desactivado o secundario */
+
+    /* bordes y radios */
+    --border-color:         #D1DCE9;
+    --border-radius-sm:     0.375rem;
+    --border-radius:        0.75rem;
+    --border-radius-lg:     1.25rem;
+    --border-radius-xl:     2rem;
+
+    /* sombras - van de menos a mas dramaticas */
+    --shadow-sm:            0 1px 3px rgba(11,28,45,0.08);
+    --shadow-md:            0 4px 16px rgba(11,28,45,0.12);
+    --shadow-lg:            0 8px 32px rgba(11,28,45,0.16);
+    --shadow-xl:            0 16px 48px rgba(11,28,45,0.22);
+
+    /* tipografia */
+    --font-body:            'Inter', sans-serif;
+    --font-display:         'Playfair Display', serif;  /* para titulos y h1-h3 */
+    --font-size-xs:         0.75rem;
+    --font-size-sm:         0.875rem;
+    --font-size-base:       1rem;
+    --font-size-lg:         1.125rem;
+    --font-size-xl:         1.25rem;
+    --font-size-2xl:        1.5rem;
+    --font-size-3xl:        1.875rem;
+    --font-size-4xl:        2.25rem;
+    --font-size-5xl:        3rem;
+
+    /* espaciado en escala de 4px */
+    --space-1:  0.25rem;
+    --space-2:  0.5rem;
+    --space-3:  0.75rem;
+    --space-4:  1rem;
+    --space-5:  1.25rem;
+    --space-6:  1.5rem;
+    --space-8:  2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+
+    /* velocidades de transicion */
+    --transition-fast:      150ms ease;
+    --transition-base:      300ms ease;
+    --transition-slow:      500ms ease;
+
+    /* layout */
+    --container-max:        1280px;
+    --container-px:         1.5rem;
+    --header-height:        72px;
+
+    /* z-index - capas del sitio */
+    --z-header:             100;
+    --z-modal:              1000;
+    --z-tooltip:            500;
+}
+
+/* ===== dark mode =====
+   el js agrega la clase dark-mode al body
+   solo se pisan las variables que cambian, el resto se hereda */
+body.dark-mode {
+    --bg-body:              #0A0F1A;
+    --bg-surface:           #1A2332;
+    --bg-surface-alt:       #243044;
+    --text-primary:         #EDF2F7;
+    --text-secondary:       #A0AEC0;
+    --text-muted:           #718096;
+    --border-color:         #2D3748;
+    /* sombras mas oscuras porque el fondo es oscuro */
+    --shadow-sm:            0 1px 3px rgba(0,0,0,0.3);
+    --shadow-md:            0 4px 16px rgba(0,0,0,0.45);
+    --shadow-lg:            0 8px 32px rgba(0,0,0,0.55);
+    --shadow-xl:            0 16px 48px rgba(0,0,0,0.65);
+}
+
+/* ====== reset y base ====== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    /* esto hace que al navegar con anclas el header no tape el contenido */
+    scroll-padding-top: var(--header-height);
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    color: var(--text-primary);
+    background-color: var(--bg-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    /* la transicion es para que el cambio de dark/light mode se vea suave */
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* color de fondo mientras carga o si la imagen no existe */
+    background-color: var(--bg-surface-alt);
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+a:hover { color: var(--color-accent); }
+
+ul { list-style: none; }
+
+/* foco visible para accesibilidad por teclado - cumple estandar AA */
+:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 3px;
+    border-radius: var(--border-radius-sm);
+}
+
+/* ==== tipografia ==== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--text-primary);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* clamp hace que el texto escale suavemente entre viewports sin media queries */
+h1 { font-size: clamp(2rem,    5vw, var(--font-size-5xl)); }
+h2 { font-size: clamp(1.5rem,  3.5vw, var(--font-size-4xl)); }
+h3 { font-size: clamp(1.25rem, 2.5vw, var(--font-size-3xl)); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+p { color: var(--text-secondary); margin-bottom: var(--space-4); }
+p:last-child { margin-bottom: 0; }
+
+/* ===== layout ===== */
+.container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: var(--container-px);
+}
+
+.section      { padding-block: var(--space-24); }
+.section--sm  { padding-block: var(--space-16); }
+
+/* encabezado de seccion reutilizable en todas las paginas */
+.section-header { text-align: center; margin-bottom: var(--space-12); }
+.section-header__eyebrow {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-3);
+}
+.section-header__title { margin-bottom: var(--space-4); }
+.section-header__subtitle {
+    max-width: 600px;
+    margin-inline: auto;
+    color: var(--text-secondary);
+    font-size: var(--font-size-lg);
+}
+
+/* ==== botones ====
+   todos los variantes se basan en .btn, solo se agrega el modificador */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--border-radius);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform var(--transition-base), box-shadow var(--transition-base),
+                background var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+/* micro-interaccion: destello blanco al hover - sutil pero se nota */
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.15);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+.btn:hover::after  { opacity: 1; }
+.btn:active        { transform: translateY(1px) scale(0.98); }
+
+.btn--primary {
+    background: var(--color-secondary);
+    color: #fff;
+    border-color: var(--color-secondary);
+}
+.btn--primary:hover {
+    background: #0096b4;
+    border-color: #0096b4;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--accent {
+    background: var(--color-accent);
+    color: var(--color-primary);
+    border-color: var(--color-accent);
+}
+.btn--accent:hover {
+    background: #e09520;
+    border-color: #e09520;
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--outline {
+    background: transparent;
+    color: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+.btn--outline:hover {
+    background: var(--color-secondary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn--outline-light {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,0.6);
+}
+.btn--outline-light:hover {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border-color: #fff;
+}
+
+.btn--lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-lg);
+    border-radius: var(--border-radius-lg);
+}
+.btn--sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-sm);
+}
+
+/* ===== card base ===== */
+.card {
+    background: var(--bg-surface);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-xl); }
+
+.card__image {
+    width: 100%; height: 220px;
+    object-fit: cover; display: block;
+    background: linear-gradient(135deg, var(--bg-surface-alt), var(--border-color));
+}
+.card__body  { padding: var(--space-6); }
+.card__title { font-size: var(--font-size-xl); margin-bottom: var(--space-2); color: var(--text-primary); }
+.card__text  { font-size: var(--font-size-sm); color: var(--text-secondary); margin-bottom: var(--space-4); }
+
+/* badges - pequenas etiquetas de categoria */
+.badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    border-radius: 99px;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.badge--primary { background: rgba(0,180,216,0.15); color: var(--color-secondary); }
+.badge--accent  { background: rgba(245,166,35,0.15); color: var(--color-accent); }
+.badge--success { background: rgba(45,198,83,0.15);  color: var(--color-success); }
+.badge--danger  { background: rgba(230,57,70,0.15);  color: var(--color-danger); }
+
+/* placeholder para cuando la imagen todavia no esta */
+.img-placeholder {
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; min-height: 200px;
+    background: linear-gradient(135deg, var(--bg-surface-alt) 0%, var(--border-color) 100%);
+    color: var(--text-muted);
+    font-size: var(--font-size-sm); font-weight: 500; letter-spacing: 0.04em;
+}
+
+.divider {
+    border: none; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+    opacity: 0.4; margin-block: var(--space-8);
+}
+
+/* grillas utilitarias responsive */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-6); }
+
+@media (max-width: 1024px) {
+    .grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+    .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    .section { padding-block: var(--space-16); }
+    :root { --container-px: 1rem; }
+}
+
+/* ==== scroll reveal ====
+   los elementos empiezan invisibles con translateY
+   el js agrega .visible cuando entran en el viewport (IntersectionObserver) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* delays para animar los elementos en secuencia */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* alinear iconos de material icons con el texto circundante */
+.material-icons-round {
+    font-size: inherit;
+    vertical-align: middle;
+    line-height: 1;
+}

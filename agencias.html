@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conocé a nuestros agentes de viaje. Perfiles interactivos con calificaciones y especialidades.">
+    <title>Agencias — ViajesMundo</title>
+    <link rel="icon" href="assets/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/agencias.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+    <div class="header__inner container">
+        <div class="header__brand">
+            <a href="index.html" class="brand__logo" aria-label="ViajesMundo - Inicio">
+                    <img src="assets/logo.webp" alt="ViajesMundo" class="brand__logo-img">
+                <div class="brand__icon" aria-hidden="true"><span class="material-icons-round">flight</span></div>
+                <span class="brand__name">Viajes<span>Mundo</span></span>
+            </a>
+        </div>
+        <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="destinos.html" class="nav__link">Destinos <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu"><div class="mega-menu__col"><h4>Por Tipo</h4><ul><li><a href="destinos.html">Cultural</a></li><li><a href="destinos.html">Naturaleza</a></li><li><a href="destinos.html">Sol y Playa</a></li></ul></div><div class="mega-menu__col"><h4>Por Región</h4><ul><li><a href="destinos.html">América del Sur</a></li><li><a href="destinos.html">América Central</a></li><li><a href="destinos.html">El Caribe</a></li></ul></div><div class="mega-menu__col"><h4>Populares</h4><ul><li><a href="destinos.html">Machu Picchu</a></li><li><a href="destinos.html">Patagonia</a></li><li><a href="destinos.html">Cataratas</a></li></ul></div></div>
+                </li>
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="agencias.html" class="nav__link active">Agencias <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu mega-menu--sm"><div class="mega-menu__col"><h4>Nuestros Agentes</h4><ul><li><a href="agencias.html">Ver todos</a></li><li><a href="agencias.html">Mejor calificados</a></li></ul></div><div class="mega-menu__col"><h4>Servicios</h4><ul><li><a href="agencias.html">Paquetes armados</a></li><li><a href="agencias.html">Viajes a medida</a></li></ul></div></div>
+                </li>
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="precios.html" class="nav__link">Precios <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu mega-menu--sm"><div class="mega-menu__col"><h4>Planes</h4><ul><li><a href="precios.html">Plan Básico</a></li><li><a href="precios.html">Plan Premium</a></li><li><a href="precios.html">Plan Élite</a></li></ul></div><div class="mega-menu__col"><h4>Comparar</h4><ul><li><a href="precios.html">Comparador de destinos</a></li><li><a href="precios.html">Ofertas del mes</a></li></ul></div></div>
+                </li>
+                <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header__actions">
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Activar modo oscuro">
+                <span class="material-icons-round" id="toggleIcon">dark_mode</span>
+            </button>
+            <a href="contacto.html" class="btn btn--primary btn--sm">Reservar ahora</a>
+        </div>
+        <button class="nav__hamburger" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<div class="header-spacer"></div>
+
+<section class="page-hero" aria-label="Encabezado de página">
+    <div class="container">
+        <h1>Nuestros Agentes de Viaje</h1>
+        <p>Profesionales apasionados listos para diseñar tu experiencia ideal. Pasá el cursor para ver más detalles.</p>
+    </div>
+</section>
+
+<section class="agencias-stats section--sm" aria-label="Estadísticas">
+    <div class="container">
+        <div class="agencias-stats-grid">
+            <div class="stat-item reveal"><div class="stat-item__num">24</div><p class="stat-item__label">Agentes especializados</p></div>
+            <div class="stat-item reveal reveal-delay-1"><div class="stat-item__num">4.9 ★</div><p class="stat-item__label">Calificación promedio</p></div>
+            <div class="stat-item reveal reveal-delay-2"><div class="stat-item__num">+15 años</div><p class="stat-item__label">De experiencia en el sector</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="agencias-title">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-header__eyebrow">El equipo</span>
+            <h2 class="section-header__title" id="agencias-title">Conocé a Nuestros Especialistas</h2>
+            <p class="section-header__subtitle">Pasá el cursor sobre cada tarjeta para ver el perfil completo.</p>
+        </div>
+
+        <div class="agencias-grid">
+
+            <div class="flip-card reveal" aria-label="Perfil de Lucía Fernández">
+                <div class="flip-card__inner">
+                    <div class="flip-card__front">
+                        <div class="agencia-avatar" aria-hidden="true">
+                            <span class="material-icons-round">account_circle</span>
+                        </div>
+                        <h3 class="agencia-nombre">Lucía Fernández</h3>
+                        <p class="agencia-rol">Especialista en Aventura</p>
+                        <p class="agencia-empresa">ViajesMundo · Sede Central</p>
+                        <div class="star-rating" aria-label="5 de 5 estrellas">
+                            <span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span>
+                        </div>
+                        <p class="agencia-score">5.0 · 142 reseñas</p>
+                        <p class="flip-hint" aria-hidden="true">
+                            <span class="material-icons-round" style="font-size:1rem;">flip</span> Ver perfil completo
+                        </p>
+                    </div>
+                    <div class="flip-card__back" aria-hidden="true">
+                        <h4>Especialidades</h4>
+                        <h3 class="agencia-nombre">Lucía Fernández</h3>
+                        <ul class="agencia-especialidades">
+                            <li>Trekking y aventura en montaña</li>
+                            <li>Patagonia Argentina y Chilena</li>
+                            <li>Machu Picchu y Camino Inca</li>
+                            <li>Grupos y viajes corporativos</li>
+                        </ul>
+                        <div class="agencia-contacto">
+                            <span>(388) 422-1001</span>
+                            <a href="mailto:lucia@viajesmundo.com">lucia@viajesmundo.com</a>
+                            <a href="contacto.html" class="btn btn--outline-light btn--sm" style="margin-top:0.5rem;">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card reveal reveal-delay-1" aria-label="Perfil de Roberto Paz">
+                <div class="flip-card__inner">
+                    <div class="flip-card__front">
+                        <div class="agencia-avatar" aria-hidden="true"><span class="material-icons-round">account_circle</span></div>
+                        <h3 class="agencia-nombre">Roberto Paz</h3>
+                        <p class="agencia-rol">Experto en Cultura</p>
+                        <p class="agencia-empresa">ViajesMundo · Sede Jujuy</p>
+                        <div class="star-rating" aria-label="4 de 5 estrellas">
+                            <span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <p class="agencia-score">4.0 · 98 reseñas</p>
+                        <p class="flip-hint" aria-hidden="true"><span class="material-icons-round" style="font-size:1rem;">flip</span> Ver perfil completo</p>
+                    </div>
+                    <div class="flip-card__back" aria-hidden="true">
+                        <h4>Especialidades</h4>
+                        <h3 class="agencia-nombre">Roberto Paz</h3>
+                        <ul class="agencia-especialidades">
+                            <li>Circuitos culturales andinos</li>
+                            <li>Quebrada de Humahuaca</li>
+                            <li>Turismo arqueológico</li>
+                            <li>Viajes en familia</li>
+                        </ul>
+                        <div class="agencia-contacto">
+                            <span>(388) 422-1002</span>
+                            <a href="mailto:roberto@viajesmundo.com">roberto@viajesmundo.com</a>
+                            <a href="contacto.html" class="btn btn--outline-light btn--sm" style="margin-top:0.5rem;">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card reveal reveal-delay-2" aria-label="Perfil de Valeria Torres">
+                <div class="flip-card__inner">
+                    <div class="flip-card__front">
+                        <div class="agencia-avatar" aria-hidden="true"><span class="material-icons-round">account_circle</span></div>
+                        <h3 class="agencia-nombre">Valeria Torres</h3>
+                        <p class="agencia-rol">Destinos de Playa</p>
+                        <p class="agencia-empresa">ViajesMundo · Sede Salta</p>
+                        <div class="star-rating" aria-label="5 de 5 estrellas">
+                            <span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span>
+                        </div>
+                        <p class="agencia-score">4.8 · 176 reseñas</p>
+                        <p class="flip-hint" aria-hidden="true"><span class="material-icons-round" style="font-size:1rem;">flip</span> Ver perfil completo</p>
+                    </div>
+                    <div class="flip-card__back" aria-hidden="true">
+                        <h4>Especialidades</h4>
+                        <h3 class="agencia-nombre">Valeria Torres</h3>
+                        <ul class="agencia-especialidades">
+                            <li>Caribe y playas tropicales</li>
+                            <li>Brasil — Río, Salvador, Florianópolis</li>
+                            <li>Lunas de miel y románticos</li>
+                            <li>All inclusive y resorts</li>
+                        </ul>
+                        <div class="agencia-contacto">
+                            <span>(387) 422-1003</span>
+                            <a href="mailto:valeria@viajesmundo.com">valeria@viajesmundo.com</a>
+                            <a href="contacto.html" class="btn btn--outline-light btn--sm" style="margin-top:0.5rem;">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card reveal" aria-label="Perfil de Marcos Gutiérrez">
+                <div class="flip-card__inner">
+                    <div class="flip-card__front">
+                        <div class="agencia-avatar" aria-hidden="true"><span class="material-icons-round">account_circle</span></div>
+                        <h3 class="agencia-nombre">Marcos Gutiérrez</h3>
+                        <p class="agencia-rol">Turismo Gastronómico</p>
+                        <p class="agencia-empresa">ViajesMundo · Sede Mendoza</p>
+                        <div class="star-rating" aria-label="5 de 5 estrellas">
+                            <span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span>
+                        </div>
+                        <p class="agencia-score">4.7 · 89 reseñas</p>
+                        <p class="flip-hint" aria-hidden="true"><span class="material-icons-round" style="font-size:1rem;">flip</span> Ver perfil completo</p>
+                    </div>
+                    <div class="flip-card__back" aria-hidden="true">
+                        <h4>Especialidades</h4>
+                        <h3 class="agencia-nombre">Marcos Gutiérrez</h3>
+                        <ul class="agencia-especialidades">
+                            <li>Rutas del vino en Mendoza</li>
+                            <li>Gastronomía porteña y regional</li>
+                            <li>Tours de bodegas y viñedos</li>
+                            <li>Festivales gastronómicos</li>
+                        </ul>
+                        <div class="agencia-contacto">
+                            <span>(261) 422-1004</span>
+                            <a href="mailto:marcos@viajesmundo.com">marcos@viajesmundo.com</a>
+                            <a href="contacto.html" class="btn btn--outline-light btn--sm" style="margin-top:0.5rem;">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card reveal reveal-delay-1" aria-label="Perfil de Ana Romero">
+                <div class="flip-card__inner">
+                    <div class="flip-card__front">
+                        <div class="agencia-avatar" aria-hidden="true"><span class="material-icons-round">account_circle</span></div>
+                        <h3 class="agencia-nombre">Ana Romero</h3>
+                        <p class="agencia-rol">Viajes Religiosos</p>
+                        <p class="agencia-empresa">ViajesMundo · Sede Central</p>
+                        <div class="star-rating" aria-label="5 de 5 estrellas">
+                            <span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span>
+                        </div>
+                        <p class="agencia-score">5.0 · 63 reseñas</p>
+                        <p class="flip-hint" aria-hidden="true"><span class="material-icons-round" style="font-size:1rem;">flip</span> Ver perfil completo</p>
+                    </div>
+                    <div class="flip-card__back" aria-hidden="true">
+                        <h4>Especialidades</h4>
+                        <h3 class="agencia-nombre">Ana Romero</h3>
+                        <ul class="agencia-especialidades">
+                            <li>Peregrinaciones y retiros</li>
+                            <li>Santuario de Luján</li>
+                            <li>Grupos parroquiales y diocesanos</li>
+                            <li>San Cayetano y circuitos santos</li>
+                        </ul>
+                        <div class="agencia-contacto">
+                            <span>(388) 422-1005</span>
+                            <a href="mailto:ana@viajesmundo.com">ana@viajesmundo.com</a>
+                            <a href="contacto.html" class="btn btn--outline-light btn--sm" style="margin-top:0.5rem;">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card reveal reveal-delay-2" aria-label="Perfil de Diego Soria">
+                <div class="flip-card__inner">
+                    <div class="flip-card__front">
+                        <div class="agencia-avatar" aria-hidden="true"><span class="material-icons-round">account_circle</span></div>
+                        <h3 class="agencia-nombre">Diego Soria</h3>
+                        <p class="agencia-rol">Ecoturismo y Naturaleza</p>
+                        <p class="agencia-empresa">ViajesMundo · Sede Bariloche</p>
+                        <div class="star-rating" aria-label="4 de 5 estrellas">
+                            <span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star star--filled" aria-hidden="true">★</span><span class="star" aria-hidden="true">★</span>
+                        </div>
+                        <p class="agencia-score">4.3 · 117 reseñas</p>
+                        <p class="flip-hint" aria-hidden="true"><span class="material-icons-round" style="font-size:1rem;">flip</span> Ver perfil completo</p>
+                    </div>
+                    <div class="flip-card__back" aria-hidden="true">
+                        <h4>Especialidades</h4>
+                        <h3 class="agencia-nombre">Diego Soria</h3>
+                        <ul class="agencia-especialidades">
+                            <li>Ecoturismo y conservación</li>
+                            <li>Parques nacionales de la Patagonia</li>
+                            <li>Observación de fauna silvestre</li>
+                            <li>Circuitos de ski y nieve</li>
+                        </ul>
+                        <div class="agencia-contacto">
+                            <span>(294) 422-1006</span>
+                            <a href="mailto:diego@viajesmundo.com">diego@viajesmundo.com</a>
+                            <a href="contacto.html" class="btn btn--outline-light btn--sm" style="margin-top:0.5rem;">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer__body">
+            <div class="footer__brand">
+                <a href="index.html" class="brand__logo" style="margin-bottom:1rem; display:inline-flex;">
+                        <img src="assets/logo.webp" alt="ViajesMundo" class="brand__logo-img">
+                    <div class="brand__icon" aria-hidden="true"><span class="material-icons-round">flight</span></div>
+                    <span class="brand__name">Viajes<span>Mundo</span></span>
+                </a>
+                <p>Tu compañía de confianza para explorar el mundo.</p>
+                <nav aria-label="Redes sociales"><ul class="social-links"><li><a href="#" class="social-link" aria-label="Facebook">f</a></li><li><a href="#" class="social-link" aria-label="Instagram"><span class="material-icons-round">photo_camera</span></a></li><li><a href="#" class="social-link" aria-label="Twitter">X</a></li><li><a href="#" class="social-link" aria-label="YouTube"><span class="material-icons-round">play_circle</span></a></li></ul></nav>
+            </div>
+            <div class="footer__col"><h5>Destinos</h5><ul><li><a href="destinos.html">Machu Picchu</a></li><li><a href="destinos.html">Patagonia</a></li><li><a href="destinos.html">Cataratas</a></li><li><a href="destinos.html">Río de Janeiro</a></li></ul></div>
+            <div class="footer__col"><h5>Empresa</h5><ul><li><a href="agencias.html">Agentes</a></li><li><a href="precios.html">Precios</a></li><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+            <div class="footer__newsletter"><h5>Newsletter</h5><p>Ofertas exclusivas en tu email.</p><form class="newsletter-form" novalidate><input type="email" placeholder="tu@email.com" required aria-label="Email"><button type="submit" class="btn btn--primary">Suscribirme</button></form><div class="newsletter-success" role="status">✓ ¡Gracias por suscribirte!</div></div>
+        </div>
+        <div class="footer__map"><h5>Encontranos</h5><div class="map-container"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-65.3200%2C-24.2100%2C-65.2900%2C-24.1800&layer=mapnik" title="Ubicación de nuestra oficina" loading="lazy" allowfullscreen></iframe></div></div>
+        <div class="footer__bottom"><p>© 2026 ViajesMundo. Todos los derechos reservados.</p><p>UNJu</p></div>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog de viajes de ViajesMundo. Artículos, consejos y guías de destinos turísticos escritos por expertos.">
+    <title>Blog de Destinos — ViajesMundo</title>
+    <link rel="icon" href="assets/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+    <div class="header__inner container">
+        <div class="header__brand">
+            <a href="index.html" class="brand__logo" aria-label="ViajesMundo - Inicio">
+                    <img src="assets/logo.webp" alt="ViajesMundo" class="brand__logo-img">
+                <div class="brand__icon" aria-hidden="true"><span class="material-icons-round">flight</span></div>
+                <span class="brand__name">Viajes<span>Mundo</span></span>
+            </a>
+        </div>
+        <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="destinos.html" class="nav__link">Destinos <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu"><div class="mega-menu__col"><h4>Por Tipo</h4><ul><li><a href="destinos.html">Cultural</a></li><li><a href="destinos.html">Naturaleza</a></li><li><a href="destinos.html">Sol y Playa</a></li></ul></div><div class="mega-menu__col"><h4>Por Región</h4><ul><li><a href="destinos.html">América del Sur</a></li><li><a href="destinos.html">América Central</a></li><li><a href="destinos.html">El Caribe</a></li></ul></div><div class="mega-menu__col"><h4>Populares</h4><ul><li><a href="destinos.html">Machu Picchu</a></li><li><a href="destinos.html">Patagonia</a></li><li><a href="destinos.html">Cataratas</a></li></ul></div></div>
+                </li>
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="agencias.html" class="nav__link">Agencias <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu mega-menu--sm"><div class="mega-menu__col"><h4>Nuestros Agentes</h4><ul><li><a href="agencias.html">Ver todos</a></li><li><a href="agencias.html">Mejor calificados</a></li></ul></div><div class="mega-menu__col"><h4>Servicios</h4><ul><li><a href="agencias.html">Paquetes armados</a></li><li><a href="agencias.html">Viajes a medida</a></li></ul></div></div>
+                </li>
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="precios.html" class="nav__link">Precios <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu mega-menu--sm"><div class="mega-menu__col"><h4>Planes</h4><ul><li><a href="precios.html">Plan Básico</a></li><li><a href="precios.html">Plan Premium</a></li><li><a href="precios.html">Plan Élite</a></li></ul></div><div class="mega-menu__col"><h4>Comparar</h4><ul><li><a href="precios.html">Comparador de destinos</a></li><li><a href="precios.html">Ofertas del mes</a></li></ul></div></div>
+                </li>
+                <li class="nav__item"><a href="blog.html" class="nav__link active">Blog</a></li>
+                <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header__actions">
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Activar modo oscuro">
+                <span class="material-icons-round" id="toggleIcon">dark_mode</span>
+            </button>
+            <a href="contacto.html" class="btn btn--primary btn--sm">Reservar ahora</a>
+        </div>
+        <button class="nav__hamburger" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<div class="header-spacer"></div>
+
+<section class="page-hero" aria-label="Encabezado">
+    <div class="container">
+        <h1>Blog de Destinos</h1>
+        <p>Guías, consejos y relatos de viajes escritos por nuestros expertos y viajeros.</p>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="blog-title">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-header__eyebrow">Últimas publicaciones</span>
+            <h2 class="section-header__title" id="blog-title">Noticias y Guías de Viaje</h2>
+        </div>
+
+        <!-- filtros por tag - css-only con radio + :checked -->
+        <input type="radio" name="tag" id="tag-all"          class="tags-filter-input" checked aria-label="Todos">
+        <input type="radio" name="tag" id="tag-viaje"        class="tags-filter-input" aria-label="Viaje">
+        <input type="radio" name="tag" id="tag-cultura"      class="tags-filter-input" aria-label="Cultura">
+        <input type="radio" name="tag" id="tag-gastronomia"  class="tags-filter-input" aria-label="Gastronomía">
+        <input type="radio" name="tag" id="tag-aventura"     class="tags-filter-input" aria-label="Aventura">
+
+        <div class="tags-bar" role="group" aria-label="Filtrar por categoría">
+            <label for="tag-all"         class="tag-label">Todos</label>
+            <label for="tag-viaje"       class="tag-label">Viaje</label>
+            <label for="tag-cultura"     class="tag-label">Cultura</label>
+            <label for="tag-gastronomia" class="tag-label">Gastronomía</label>
+            <label for="tag-aventura"    class="tag-label">Aventura</label>
+        </div>
+
+        <!-- grid tipo newspaper -->
+        <div class="blog-articles">
+            <div class="blog-grid">
+
+                <article class="blog-article blog-article--main reveal" data-tag="aventura" aria-labelledby="art1-title">
+                    <div class="blog-article__image-wrap">
+                        <img src="assets/patagonia.webp" alt="Trekking en la Patagonia al amanecer" class="blog-article__img">
+                        <span class="badge badge--primary blog-article__cat">Aventura</span>
+                    </div>
+                    <div class="blog-article__body">
+                        <div class="blog-article__meta">
+                            <span><span class="material-icons-round" style="font-size:0.9rem;">calendar_today</span> 15 de abril, 2024</span>
+                            <span><span class="material-icons-round" style="font-size:0.9rem;">schedule</span> 8 min de lectura</span>
+                        </div>
+                        <a href="#" class="blog-article__title" id="art1-title">
+                            10 rutas de trekking imprescindibles en la Patagonia que todo aventurero debe conocer
+                        </a>
+                        <p class="blog-article__excerpt">La Patagonia es el destino soñado para los amantes del trekking. Desde Torres del Paine hasta el Chaltén, estas rutas ofrecen paisajes que quitan el aliento: glaciares milenarios, lagos turquesa y montañas que parecen tocar el cielo.</p>
+                        <div class="blog-article__footer">
+                            <div class="blog-author">
+                                <div class="blog-author__avatar" aria-hidden="true"><span class="material-icons-round">account_circle</span></div>
+                                <div>
+                                    <p class="blog-author__name">Lucía Fernández</p>
+                                    <p class="blog-author__role">Especialista en Aventura</p>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn--outline btn--sm">Leer más</a>
+                        </div>
+                    </div>
+                </article>
+
+                <aside class="blog-sidebar" aria-label="Artículos relacionados">
+                    <article class="blog-mini reveal" data-tag="cultura" aria-labelledby="mini1-title">
+                        <img src="assets/cusco-peru.webp" alt="Plaza de Armas de Cusco" class="blog-mini__img">
+                        <div class="blog-mini__body">
+                            <span class="blog-mini__cat">Cultura</span>
+                            <a href="#" class="blog-mini__title" id="mini1-title">Guía completa para visitar Cusco sin perderte nada</a>
+                            <time class="blog-mini__date" datetime="2024-04-08">8 abr, 2024</time>
+                        </div>
+                    </article>
+                    <article class="blog-mini reveal reveal-delay-1" data-tag="gastronomia" aria-labelledby="mini2-title">
+                        <img src="assets/buenos-aires.webp" alt="Gastronomía porteña" class="blog-mini__img">
+                        <div class="blog-mini__body">
+                            <span class="blog-mini__cat">Gastronomía</span>
+                            <a href="#" class="blog-mini__title" id="mini2-title">Los mejores restaurantes de Buenos Aires para foodlovers</a>
+                            <time class="blog-mini__date" datetime="2024-04-01">1 abr, 2024</time>
+                        </div>
+                    </article>
+                    <article class="blog-mini reveal reveal-delay-2" data-tag="viaje" aria-labelledby="mini3-title">
+                        <img src="assets/cartagena-de-indias.webp" alt="Maleta lista para viajar" class="blog-mini__img">
+                        <div class="blog-mini__body">
+                            <span class="blog-mini__cat">Viaje</span>
+                            <a href="#" class="blog-mini__title" id="mini3-title">Qué llevar en tu mochila: la guía definitiva</a>
+                            <time class="blog-mini__date" datetime="2024-03-25">25 mar, 2024</time>
+                        </div>
+                    </article>
+                </aside>
+
+                <article class="blog-article blog-article--third reveal" data-tag="cultura" aria-labelledby="art2-title">
+                    <div class="blog-article__image-wrap">
+                        <img src="assets/machu-picchu.webp" alt="Machu Picchu al amanecer" class="blog-article__img">
+                        <span class="badge badge--accent blog-article__cat">Cultura</span>
+                    </div>
+                    <div class="blog-article__body">
+                        <div class="blog-article__meta"><span>20 mar, 2024</span><span>5 min</span></div>
+                        <a href="#" class="blog-article__title" id="art2-title">El amanecer en Machu Picchu: cómo organizar la experiencia perfecta</a>
+                        <p class="blog-article__excerpt">Madrugar nunca fue tan gratificante. Te contamos cómo llegar primero a la Puerta del Sol y vivir la magia.</p>
+                        <div class="blog-article__footer">
+                            <div class="blog-author">
+                                <div class="blog-author__avatar" aria-hidden="true"><span class="material-icons-round">account_circle</span></div>
+                                <div><p class="blog-author__name">Roberto Paz</p><p class="blog-author__role">Experto en Cultura</p></div>
+                            </div>
+                            <a href="#" class="btn btn--outline btn--sm">Leer más</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-article blog-article--third reveal reveal-delay-1" data-tag="gastronomia" aria-labelledby="art3-title">
+                    <div class="blog-article__image-wrap">
+                        <img src="assets/rio-de-janeiro.webp" alt="Mercado gastronómico de Lima" class="blog-article__img">
+                        <span class="badge badge--success blog-article__cat">Gastronomía</span>
+                    </div>
+                    <div class="blog-article__body">
+                        <div class="blog-article__meta"><span>10 mar, 2024</span><span>6 min</span></div>
+                        <a href="#" class="blog-article__title" id="art3-title">Lima: la capital gastronómica de América Latina que tenés que conocer</a>
+                        <p class="blog-article__excerpt">Ceviche, causa limeña, anticuchos. Lima es un festival de sabores que no para de sorprender.</p>
+                        <div class="blog-article__footer">
+                            <div class="blog-author">
+                                <div class="blog-author__avatar" aria-hidden="true"><span class="material-icons-round">account_circle</span></div>
+                                <div><p class="blog-author__name">Marcos Gutiérrez</p><p class="blog-author__role">Turismo Gastronómico</p></div>
+                            </div>
+                            <a href="#" class="btn btn--outline btn--sm">Leer más</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="blog-article blog-article--third reveal reveal-delay-2" data-tag="viaje" aria-labelledby="art4-title">
+                    <div class="blog-article__image-wrap">
+                        <img src="assets/cataratas-iguazu.webp" alt="Cataratas del Iguazú" class="blog-article__img">
+                        <span class="badge badge--primary blog-article__cat">Viaje</span>
+                    </div>
+                    <div class="blog-article__body">
+                        <div class="blog-article__meta"><span>1 mar, 2024</span><span>4 min</span></div>
+                        <a href="#" class="blog-article__title" id="art4-title">Iguazú en 3 días: itinerario completo para no perderte nada</a>
+                        <p class="blog-article__excerpt">¿Cuánto tiempo necesitás en Iguazú? Te armamos el itinerario ideal, lado argentino y brasileño.</p>
+                        <div class="blog-article__footer">
+                            <div class="blog-author">
+                                <div class="blog-author__avatar" aria-hidden="true"><span class="material-icons-round">account_circle</span></div>
+                                <div><p class="blog-author__name">Valeria Torres</p><p class="blog-author__role">Destinos de Playa</p></div>
+                            </div>
+                            <a href="#" class="btn btn--outline btn--sm">Leer más</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- seccion de comentarios con avatares generados con css -->
+<section class="section--sm" style="padding-block:var(--space-16);" aria-labelledby="comments-title">
+    <div class="container" style="max-width:860px;">
+        <h2 id="comments-title" style="margin-bottom:var(--space-8);">Comentarios del artículo</h2>
+        <div class="comments-section">
+            <h4>4 comentarios</h4>
+
+            <article class="comment reveal" aria-label="Comentario de Martina López">
+                <div class="comment__avatar" aria-hidden="true">M</div>
+                <div class="comment__body">
+                    <header class="comment__header">
+                        <span class="comment__name">Martina López</span>
+                        <time class="comment__date" datetime="2024-04-16">16 de abril, 2024</time>
+                    </header>
+                    <p class="comment__text">¡Excelente artículo! Hice el W Trek en Torres del Paine el año pasado y fue la experiencia más increíble de mi vida. Definitivamente lo recomiendo.</p>
+                </div>
+            </article>
+
+            <article class="comment reveal reveal-delay-1" aria-label="Comentario de Agustín Pereyra">
+                <div class="comment__avatar" aria-hidden="true">A</div>
+                <div class="comment__body">
+                    <header class="comment__header">
+                        <span class="comment__name">Agustín Pereyra</span>
+                        <time class="comment__date" datetime="2024-04-17">17 de abril, 2024</time>
+                    </header>
+                    <p class="comment__text">¿Cuál es la mejor época para hacer el Chaltén? Estoy planeando ir en noviembre. ¿Hay mucha gente?</p>
+                </div>
+            </article>
+
+            <article class="comment comment--reply reveal reveal-delay-2" aria-label="Respuesta de Lucía Fernández">
+                <div class="comment__avatar" aria-hidden="true">L</div>
+                <div class="comment__body">
+                    <header class="comment__header">
+                        <span class="comment__name">Lucía Fernández</span>
+                        <span class="badge badge--primary" style="font-size:0.65rem;">Autora</span>
+                        <time class="comment__date" datetime="2024-04-17">17 de abril, 2024</time>
+                    </header>
+                    <p class="comment__text">¡Hola Agustín! Noviembre es ideal: el clima comienza a mejorar y hay menos turistas que en enero/febrero. ¡Animate!</p>
+                </div>
+            </article>
+
+            <article class="comment reveal" aria-label="Comentario de Sofía Ruiz">
+                <div class="comment__avatar" aria-hidden="true">S</div>
+                <div class="comment__body">
+                    <header class="comment__header">
+                        <span class="comment__name">Sofía Ruiz</span>
+                        <time class="comment__date" datetime="2024-04-18">18 de abril, 2024</time>
+                    </header>
+                    <p class="comment__text">Me encantó el artículo. Voy en marzo con mi pareja, ¿recomiendan algún alojamiento especial en El Calafate?</p>
+                </div>
+            </article>
+        </div>
+
+        <!-- formulario para nuevo comentario -->
+        <div style="margin-top:var(--space-8); background:var(--bg-surface); border-radius:var(--border-radius-lg); padding:var(--space-8); box-shadow:var(--shadow-sm);">
+            <h4 style="margin-bottom:var(--space-5);">Dejá tu comentario</h4>
+            <form aria-label="Formulario de comentario" novalidate>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--space-4); margin-bottom:var(--space-4);">
+                    <div>
+                        <label for="com-nombre" style="display:block; font-size:0.875rem; font-weight:600; margin-bottom:0.5rem; color:var(--text-primary);">Nombre *</label>
+                        <input type="text" id="com-nombre" placeholder="Tu nombre" required style="padding:0.75rem 1rem; border-radius:0.75rem; border:2px solid var(--border-color); background:var(--bg-body); color:var(--text-primary); font-family:var(--font-body); font-size:1rem; width:100%; outline:none; transition:border-color 0.15s;">
+                    </div>
+                    <div>
+                        <label for="com-email" style="display:block; font-size:0.875rem; font-weight:600; margin-bottom:0.5rem; color:var(--text-primary);">Email *</label>
+                        <input type="email" id="com-email" placeholder="tu@email.com" required style="padding:0.75rem 1rem; border-radius:0.75rem; border:2px solid var(--border-color); background:var(--bg-body); color:var(--text-primary); font-family:var(--font-body); font-size:1rem; width:100%; outline:none; transition:border-color 0.15s;">
+                    </div>
+                </div>
+                <div style="margin-bottom:var(--space-4);">
+                    <label for="com-texto" style="display:block; font-size:0.875rem; font-weight:600; margin-bottom:0.5rem; color:var(--text-primary);">Comentario *</label>
+                    <textarea id="com-texto" placeholder="Escribí tu comentario…" required rows="4" style="padding:0.75rem 1rem; border-radius:0.75rem; border:2px solid var(--border-color); background:var(--bg-body); color:var(--text-primary); font-family:var(--font-body); font-size:1rem; width:100%; outline:none; resize:vertical; transition:border-color 0.15s;"></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary">Publicar comentario</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer__body">
+            <div class="footer__brand">
+                <a href="index.html" class="brand__logo" style="margin-bottom:1rem; display:inline-flex;">
+                    <img src="assets/logo.webp" alt="ViajesMundo" class="brand__logo-img">
+                    <div class="brand__icon" aria-hidden="true"><span class="material-icons-round">flight</span></div>
+                    <span class="brand__name">Viajes<span>Mundo</span></span>
+                </a>
+                <p>Tu compañía de confianza para explorar el mundo.</p>
+                <nav aria-label="Redes sociales"><ul class="social-links"><li><a href="#" class="social-link" aria-label="Facebook">f</a></li><li><a href="#" class="social-link" aria-label="Instagram"><span class="material-icons-round">photo_camera</span></a></li><li><a href="#" class="social-link" aria-label="Twitter">X</a></li><li><a href="#" class="social-link" aria-label="YouTube"><span class="material-icons-round">play_circle</span></a></li></ul></nav>
+            </div>
+            <div class="footer__col"><h5>Destinos</h5><ul><li><a href="destinos.html">Machu Picchu</a></li><li><a href="destinos.html">Patagonia</a></li><li><a href="destinos.html">Cataratas</a></li><li><a href="destinos.html">Río de Janeiro</a></li></ul></div>
+            <div class="footer__col"><h5>Empresa</h5><ul><li><a href="agencias.html">Agentes</a></li><li><a href="precios.html">Precios</a></li><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+            <div class="footer__newsletter"><h5>Newsletter</h5><p>Ofertas exclusivas en tu email.</p><form class="newsletter-form" novalidate><input type="email" placeholder="tu@email.com" required aria-label="Email"><button type="submit" class="btn btn--primary">Suscribirme</button></form><div class="newsletter-success" role="status">✓ ¡Gracias por suscribirte!</div></div>
+        </div>
+        <div class="footer__map"><h5>Encontranos</h5><div class="map-container"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-65.3200%2C-24.2100%2C-65.2900%2C-24.1800&layer=mapnik" title="Ubicación de nuestra oficina" loading="lazy" allowfullscreen></iframe></div></div>
+        <div class="footer__bottom">
+            <p>© 2026 ViajesMundo. Todos los derechos reservados.</p>
+            <p>UNJu</p>
+        </div>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

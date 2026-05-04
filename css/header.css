@@ -1,0 +1,415 @@
+/* header.css - encabezado, mega menu y nav mobile */
+
+/* --- imagen del logo en el nav ---
+   si colocas img/logo.webp esta imagen reemplaza el icono de texto
+   ajusta el height segun tu logo */
+.brand__logo-img {
+    height: 38px;
+    width: 38px;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* cuando hay imagen de logo el brand__name queda oculto */
+.brand__logo:has(.brand__logo-img) .brand__icon,
+.brand__logo:has(.brand__logo-img) .brand__name {
+    display: none;
+}
+
+/* el header es fixed para que siempre quede visible al scrollear
+   el backdrop-filter hace el efecto de vidrio esmerilado */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: var(--z-header);
+    background: rgba(11, 28, 45, 0.96);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: box-shadow var(--transition-base);
+}
+
+/* esta clase la agrega el js cuando el usuario scrollea */
+.site-header.scrolled {
+    box-shadow: var(--shadow-lg);
+}
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: var(--space-8);
+}
+
+/* ===== brand / logo ===== */
+.header__brand {
+    flex-shrink: 0;
+}
+
+.brand__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    color: #fff;
+    text-decoration: none;
+}
+
+.brand__icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-accent));
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: transform var(--transition-base);
+}
+
+/* pequeña animacion al hover del logo, le da vida */
+.brand__logo:hover .brand__icon {
+    transform: rotate(-10deg) scale(1.1);
+}
+
+.brand__name {
+    font-family: var(--font-display);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: #fff;
+}
+
+.brand__name span {
+    color: var(--color-secondary);
+}
+
+/* ====== nav links ====== */
+.main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    list-style: none;
+}
+
+.nav__item {
+    position: relative;
+}
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: var(--space-2) var(--space-4);
+    color: rgba(255, 255, 255, 0.82);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    border-radius: var(--border-radius-sm);
+    transition: color var(--transition-fast), background var(--transition-fast);
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.nav__link:hover,
+.nav__link.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav__link.active {
+    color: var(--color-secondary);
+}
+
+.nav__arrow {
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform var(--transition-base);
+    /* el material icon se alinea mejor con esto */
+    vertical-align: middle;
+    display: inline-flex;
+}
+
+/* ===== mega menu =====
+   siempre invisible por defecto, solo se muestra con hover (desktop)
+   o con la clase .open (mobile via js) */
+.mega-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    min-width: 500px;
+    background: var(--bg-surface);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--border-color);
+    padding: var(--space-6);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    /* oculto por defecto */
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
+    z-index: calc(var(--z-header) + 1);
+}
+
+/* la flechita triangular arriba del menu */
+.mega-menu::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 12px;
+    height: 12px;
+    background: var(--bg-surface);
+    border-left: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+}
+
+/* version mas angosta del mega menu (para agencias y precios) */
+.mega-menu--sm {
+    min-width: 340px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* ===== hover del mega menu - SOLO en desktop =====
+   esto es importante: si no se separa en min-width, en mobile
+   el hover se dispara al tocar y el menu aparece fuera de pantalla */
+@media (min-width: 1025px) {
+    .nav__item--has-dropdown:hover .mega-menu {
+        opacity: 1;
+        pointer-events: all;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .nav__item--has-dropdown:hover .nav__arrow {
+        transform: rotate(180deg);
+    }
+}
+
+.mega-menu__col h4 {
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mega-menu__col ul {
+    list-style: none;
+}
+
+.mega-menu__col ul li a {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    border-radius: var(--border-radius-sm);
+    transition: background var(--transition-fast), color var(--transition-fast);
+    text-decoration: none;
+}
+
+.mega-menu__col ul li a:hover {
+    background: var(--bg-surface-alt);
+    color: var(--color-secondary);
+}
+
+/* ====== acciones del header (dark mode + cta) ====== */
+.header__actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+/* el boton de dark mode - el icono lo cambia el js */
+.dark-mode-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition-fast), transform var(--transition-base);
+}
+
+.dark-mode-toggle:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(20deg);
+}
+
+/* el icono de material icons necesita este tamaño */
+.dark-mode-toggle .material-icons-round {
+    font-size: 1.25rem;
+}
+
+/* ========= hamburguesa mobile ========= */
+.nav__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: var(--border-radius-sm);
+    transition: background var(--transition-fast);
+}
+
+.nav__hamburger:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav__hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+    transform-origin: center;
+}
+
+/* animacion de la X al abrir el menu */
+.nav__hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav__hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav__hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* espacio para compensar el header fixed */
+.header-spacer {
+    height: var(--header-height);
+}
+
+/* ========== responsive mobile (hasta 1024px) ==========
+   aca el nav se convierte en un panel lateral */
+@media (max-width: 1024px) {
+
+    /* margin-left auto empuja el hamburger al extremo derecho del header */
+    .nav__hamburger {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .header__actions .btn {
+        display: none;
+    }
+
+    /* el nav mobile sale desde la izquierda */
+    .main-nav {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        background: var(--color-primary);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: var(--space-6);
+        overflow-y: auto;
+        /* importante: overflow-x hidden para que el contenido no se salga */
+        overflow-x: hidden;
+        transform: translateX(-100%);
+        transition: transform var(--transition-base);
+        z-index: calc(var(--z-header) - 1);
+    }
+
+    .main-nav.open {
+        transform: translateX(0);
+    }
+
+    .nav__list {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 0;
+    }
+
+    .nav__item {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav__link {
+        padding: var(--space-4);
+        font-size: var(--font-size-base);
+        width: 100%;
+    }
+
+    /* en mobile el mega menu es estatico, no absolutamente posicionado
+       esto evita que se salga de la pantalla */
+    .mega-menu,
+    .mega-menu--sm {
+        position: static;
+        transform: none;
+        /* resetear dimensiones fijas que causaban overflow */
+        min-width: unset;
+        width: 100%;
+        max-width: 100%;
+        opacity: 1;
+        pointer-events: all;
+        visibility: visible;
+        /* oculto por defecto, se muestra con la clase .open del item padre */
+        display: none;
+        grid-template-columns: 1fr;
+        box-shadow: none;
+        border: none;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: var(--border-radius);
+        margin: var(--space-2) 0 var(--space-4);
+        padding: var(--space-4);
+    }
+
+    .mega-menu::before {
+        display: none;
+    }
+
+    /* se muestra cuando el item padre tiene clase .open (la pone el js) */
+    .nav__item--has-dropdown.open .mega-menu,
+    .nav__item--has-dropdown.open .mega-menu--sm {
+        display: grid;
+    }
+
+    .mega-menu__col h4 {
+        color: var(--color-secondary);
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .mega-menu__col ul li a {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .mega-menu__col ul li a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compará planes y precios de destinos turísticos en ViajesMundo.">
+    <title>Precios — ViajesMundo</title>
+    <link rel="icon" href="assets/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/precios.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+    <div class="header__inner container">
+        <div class="header__brand">
+            <a href="index.html" class="brand__logo" aria-label="ViajesMundo - Inicio">
+                    <img src="assets/logo.webp" alt="ViajesMundo" class="brand__logo-img">
+                <div class="brand__icon" aria-hidden="true"><span class="material-icons-round">flight</span></div>
+                <span class="brand__name">Viajes<span>Mundo</span></span>
+            </a>
+        </div>
+        <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="destinos.html" class="nav__link">Destinos <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu"><div class="mega-menu__col"><h4>Por Tipo</h4><ul><li><a href="destinos.html">Cultural</a></li><li><a href="destinos.html">Naturaleza</a></li><li><a href="destinos.html">Sol y Playa</a></li></ul></div><div class="mega-menu__col"><h4>Por Región</h4><ul><li><a href="destinos.html">América del Sur</a></li><li><a href="destinos.html">América Central</a></li><li><a href="destinos.html">El Caribe</a></li></ul></div><div class="mega-menu__col"><h4>Populares</h4><ul><li><a href="destinos.html">Machu Picchu</a></li><li><a href="destinos.html">Patagonia</a></li><li><a href="destinos.html">Cataratas</a></li></ul></div></div>
+                </li>
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="agencias.html" class="nav__link">Agencias <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu mega-menu--sm"><div class="mega-menu__col"><h4>Nuestros Agentes</h4><ul><li><a href="agencias.html">Ver todos</a></li><li><a href="agencias.html">Mejor calificados</a></li></ul></div><div class="mega-menu__col"><h4>Servicios</h4><ul><li><a href="agencias.html">Paquetes armados</a></li><li><a href="agencias.html">Viajes a medida</a></li></ul></div></div>
+                </li>
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="precios.html" class="nav__link active">Precios <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu mega-menu--sm"><div class="mega-menu__col"><h4>Planes</h4><ul><li><a href="precios.html">Plan Básico</a></li><li><a href="precios.html">Plan Premium</a></li><li><a href="precios.html">Plan Élite</a></li></ul></div><div class="mega-menu__col"><h4>Comparar</h4><ul><li><a href="precios.html">Comparador de destinos</a></li><li><a href="precios.html">Ofertas del mes</a></li></ul></div></div>
+                </li>
+                <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header__actions">
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Activar modo oscuro">
+                <span class="material-icons-round" id="toggleIcon">dark_mode</span>
+            </button>
+            <a href="contacto.html" class="btn btn--primary btn--sm">Reservar ahora</a>
+        </div>
+        <button class="nav__hamburger" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<div class="header-spacer"></div>
+
+<section class="page-hero" aria-label="Encabezado">
+    <div class="container">
+        <h1>Planes y Precios</h1>
+        <p>Elegí el plan que mejor se adapta a tu viaje. Pasá el cursor sobre los precios para ver más info.</p>
+    </div>
+</section>
+
+<!-- cards de planes -->
+<section class="section" aria-labelledby="planes-title">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-header__eyebrow">Nuestros planes</span>
+            <h2 class="section-header__title" id="planes-title">Elegí tu Plan de Viaje</h2>
+            <p class="section-header__subtitle">Todos los planes incluyen atención personalizada y asistencia durante el viaje.</p>
+        </div>
+
+        <div class="planes-grid">
+            <article class="plan-card reveal">
+                <h3>Plan Básico</h3>
+                <p class="plan-price">$490 <small>USD</small></p>
+                <p class="plan-period">por persona</p>
+                <ul class="plan-features" aria-label="Características del Plan Básico">
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Traslados aeropuerto</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Alojamiento 3 estrellas</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Guía en español</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Seguro de viaje básico</li>
+                    <li class="feat-no"><span class="feat-icon material-icons-round" aria-hidden="true">close</span> Vuelos incluidos</li>
+                    <li class="feat-no"><span class="feat-icon material-icons-round" aria-hidden="true">close</span> Pensión completa</li>
+                </ul>
+                <a href="contacto.html" class="btn btn--outline">Consultar</a>
+            </article>
+
+            <article class="plan-card plan-card--featured reveal reveal-delay-1">
+                <div class="plan-badge">Más popular</div>
+                <h3>Plan Premium</h3>
+                <p class="plan-price">$980 <small>USD</small></p>
+                <p class="plan-period">por persona</p>
+                <ul class="plan-features" aria-label="Características del Plan Premium">
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Vuelo incluido (ida y vuelta)</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Alojamiento 4 estrellas</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Media pensión</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Guía exclusivo</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Seguro de viaje completo</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Actividades opcionales</li>
+                </ul>
+                <a href="contacto.html" class="btn btn--primary">Reservar ahora</a>
+            </article>
+
+            <article class="plan-card reveal reveal-delay-2">
+                <h3>Plan Élite</h3>
+                <p class="plan-price">$1.850 <small>USD</small></p>
+                <p class="plan-period">por persona</p>
+                <ul class="plan-features" aria-label="Características del Plan Élite">
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Vuelo en clase ejecutiva</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Hotel 5 estrellas</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Pensión completa</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Guía privado</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Seguro premium + cancelación</li>
+                    <li><span class="feat-icon material-icons-round" aria-hidden="true">check</span> Experiencias VIP exclusivas</li>
+                </ul>
+                <a href="contacto.html" class="btn btn--accent">Consultar</a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- tabla comparadora - los data-tooltip muestran info al hover con css puro -->
+<section class="section--sm" style="background:var(--bg-surface-alt); padding-block:var(--space-16);" aria-labelledby="tabla-precios-title">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-header__eyebrow">Comparador</span>
+            <h2 class="section-header__title" id="tabla-precios-title">Compará Destinos y Planes</h2>
+            <p class="section-header__subtitle">Pasá el cursor sobre los precios para ver qué incluye cada uno.</p>
+        </div>
+        <div class="precios-table-wrap">
+            <table class="precios-table" aria-label="Comparador de destinos y planes">
+                <thead>
+                    <tr>
+                        <th scope="col">Destino</th>
+                        <th scope="col">Duración</th>
+                        <th scope="col">Plan Básico</th>
+                        <th scope="col">Plan Premium</th>
+                        <th scope="col">Plan Élite</th>
+                        <th scope="col">Mejor época</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="category-row"><th colspan="6" scope="colgroup">Naturaleza y Aventura</th></tr>
+                    <tr>
+                        <td class="col-destino">Patagonia</td><td>10 días</td>
+                        <td class="col-precio" data-tooltip="Alojamiento 3★ y traslados">$620</td>
+                        <td class="col-precio" data-tooltip="Vuelo + hotel 4★ y guía">$980</td>
+                        <td class="col-precio" data-tooltip="Todo incluido con experiencias VIP">$1.850</td>
+                        <td>Nov – Mar</td>
+                    </tr>
+                    <tr>
+                        <td class="col-destino">Cataratas del Iguazú</td><td>4 días</td>
+                        <td class="col-precio" data-tooltip="Sin vuelo, ideal para residentes del NEA">$180</td>
+                        <td class="col-precio" data-tooltip="Incluye acceso ilimitado a los circuitos">$620</td>
+                        <td class="col-precio" data-tooltip="Paseo en bote privado incluido">$1.100</td>
+                        <td>Todo el año</td>
+                    </tr>
+                    <tr class="category-row"><th colspan="6" scope="colgroup">Cultural e Histórico</th></tr>
+                    <tr>
+                        <td class="col-destino">Machu Picchu</td><td>7 días</td>
+                        <td class="col-precio" data-tooltip="Sin vuelo, traslados en tren incluidos">$450</td>
+                        <td class="col-precio" data-tooltip="Vuelo a Lima + tren + hotel en Aguas Calientes">$1.250</td>
+                        <td class="col-precio" data-tooltip="Ingreso VIP al amanecer + guía arqueólogo privado">$2.300</td>
+                        <td>May – Sep</td>
+                    </tr>
+                    <tr>
+                        <td class="col-destino">Cusco</td><td>5 días</td>
+                        <td class="col-precio" data-tooltip="City tour y Valle Sagrado incluidos">$380</td>
+                        <td class="col-precio" data-tooltip="Vuelo + hotel boutique colonial">$720</td>
+                        <td class="col-precio" data-tooltip="Hotel de lujo + experiencias andinas exclusivas">$1.400</td>
+                        <td>Abr – Nov</td>
+                    </tr>
+                    <tr>
+                        <td class="col-destino">Buenos Aires</td><td>4 días</td>
+                        <td class="col-precio" data-tooltip="Sin vuelo, ideal para llegar en bus">$160</td>
+                        <td class="col-precio" data-tooltip="Hotel 4★ en Palermo + cena de tango">$490</td>
+                        <td class="col-precio" data-tooltip="Suite en Puerto Madero + tour gastronómico privado">$980</td>
+                        <td>Todo el año</td>
+                    </tr>
+                    <tr class="category-row"><th colspan="6" scope="colgroup">Sol y Playa</th></tr>
+                    <tr>
+                        <td class="col-destino">Río de Janeiro</td><td>6 días</td>
+                        <td class="col-precio" data-tooltip="Hotel económico en Copacabana">$400</td>
+                        <td class="col-precio" data-tooltip="Vuelo + hotel 4★ con vista al mar">$850</td>
+                        <td class="col-precio" data-tooltip="Experiencia Carnaval + suite vista Ipanema">$1.700</td>
+                        <td>Dic – Mar</td>
+                    </tr>
+                    <tr>
+                        <td class="col-destino">Cartagena de Indias</td><td>5 días</td>
+                        <td class="col-precio" data-tooltip="Hostel boutique + tour ciudad amurallada">$350</td>
+                        <td class="col-precio" data-tooltip="Vuelo + hotel 4★ + islas del Rosario">$680</td>
+                        <td class="col-precio" data-tooltip="Resort privado en las Islas del Rosario">$1.350</td>
+                        <td>Dic – Abr</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p style="text-align:center; margin-top:1.5rem; font-size:0.85rem; color:var(--text-muted);">
+            Precios en USD por persona. Sujetos a disponibilidad. <a href="contacto.html">Consultá por ofertas de temporada.</a>
+        </p>
+    </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer__body">
+            <div class="footer__brand">
+                <a href="index.html" class="brand__logo" style="margin-bottom:1rem; display:inline-flex;">
+                        <img src="assets/logo.webp" alt="ViajesMundo" class="brand__logo-img">
+                    <div class="brand__icon" aria-hidden="true"><span class="material-icons-round">flight</span></div>
+                    <span class="brand__name">Viajes<span>Mundo</span></span>
+                </a>
+                <p>Tu compañía de confianza para explorar el mundo.</p>
+                <nav aria-label="Redes sociales"><ul class="social-links"><li><a href="#" class="social-link" aria-label="Facebook">f</a></li><li><a href="#" class="social-link" aria-label="Instagram"><span class="material-icons-round">photo_camera</span></a></li><li><a href="#" class="social-link" aria-label="Twitter">X</a></li><li><a href="#" class="social-link" aria-label="YouTube"><span class="material-icons-round">play_circle</span></a></li></ul></nav>
+            </div>
+            <div class="footer__col"><h5>Destinos</h5><ul><li><a href="destinos.html">Machu Picchu</a></li><li><a href="destinos.html">Patagonia</a></li><li><a href="destinos.html">Cataratas</a></li><li><a href="destinos.html">Río de Janeiro</a></li></ul></div>
+            <div class="footer__col"><h5>Empresa</h5><ul><li><a href="agencias.html">Agentes</a></li><li><a href="precios.html">Precios</a></li><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+            <div class="footer__newsletter"><h5>Newsletter</h5><p>Ofertas exclusivas en tu email.</p><form class="newsletter-form" novalidate><input type="email" placeholder="tu@email.com" required aria-label="Email"><button type="submit" class="btn btn--primary">Suscribirme</button></form><div class="newsletter-success" role="status">✓ ¡Gracias por suscribirte!</div></div>
+        </div>
+        <div class="footer__map"><h5>Encontranos</h5><div class="map-container"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-65.3200%2C-24.2100%2C-65.2900%2C-24.1800&layer=mapnik" title="Ubicación de nuestra oficina" loading="lazy" allowfullscreen></iframe></div></div>
+        <div class="footer__bottom"><p>© 2026 ViajesMundo. Todos los derechos reservados.</p><p>UNJu</p></div>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

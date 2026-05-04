@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ViajesMundo — Descubrí los mejores destinos turísticos. Paquetes, agencias y precios inmejorables para tu próxima aventura.">
+    <title>ViajesMundo — Turismo y Aventura</title>
+    <link rel="icon" href="assets/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" role="banner">
+    <div class="header__inner container">
+
+        <div class="header__brand">
+            <a href="index.html" class="brand__logo" aria-label="ViajesMundo - Inicio">
+                <!-- logo del sitio - colocar img/logo.webp para reemplazar el icono -->
+                <img src="assets/logo.webp" alt="ViajesMundo" class="brand__logo-img">
+                <div class="brand__icon" aria-hidden="true">
+                    <span class="material-icons-round">flight</span>
+                </div>
+                <span class="brand__name">Viajes<span>Mundo</span></span>
+            </a>
+        </div>
+
+        <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+            <ul class="nav__list">
+
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="destinos.html" class="nav__link">
+                        Destinos <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span>
+                    </a>
+                    <div class="mega-menu" role="region" aria-label="Submenú Destinos">
+                        <div class="mega-menu__col">
+                            <h4>Por Tipo</h4>
+                            <ul>
+                                <li><a href="destinos.html">Cultural</a></li>
+                                <li><a href="destinos.html">Naturaleza</a></li>
+                                <li><a href="destinos.html">Sol y Playa</a></li>
+                                <li><a href="destinos.html">Gastronómico</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__col">
+                            <h4>Por Región</h4>
+                            <ul>
+                                <li><a href="destinos.html">América del Sur</a></li>
+                                <li><a href="destinos.html">América Central</a></li>
+                                <li><a href="destinos.html">El Caribe</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__col">
+                            <h4>Populares</h4>
+                            <ul>
+                                <li><a href="destinos.html">Machu Picchu</a></li>
+                                <li><a href="destinos.html">Patagonia</a></li>
+                                <li><a href="destinos.html">Cataratas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="agencias.html" class="nav__link">
+                        Agencias <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span>
+                    </a>
+                    <div class="mega-menu mega-menu--sm" role="region" aria-label="Submenú Agencias">
+                        <div class="mega-menu__col">
+                            <h4>Nuestros Agentes</h4>
+                            <ul>
+                                <li><a href="agencias.html">Ver todos</a></li>
+                                <li><a href="agencias.html">Mejor calificados</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__col">
+                            <h4>Servicios</h4>
+                            <ul>
+                                <li><a href="agencias.html">Paquetes armados</a></li>
+                                <li><a href="agencias.html">Viajes a medida</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="precios.html" class="nav__link">
+                        Precios <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span>
+                    </a>
+                    <div class="mega-menu mega-menu--sm" role="region" aria-label="Submenú Precios">
+                        <div class="mega-menu__col">
+                            <h4>Planes</h4>
+                            <ul>
+                                <li><a href="precios.html">Plan Básico</a></li>
+                                <li><a href="precios.html">Plan Premium</a></li>
+                                <li><a href="precios.html">Plan Élite</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu__col">
+                            <h4>Comparar</h4>
+                            <ul>
+                                <li><a href="precios.html">Comparador de destinos</a></li>
+                                <li><a href="precios.html">Ofertas del mes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="header__actions">
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Activar modo oscuro">
+                <span class="material-icons-round" id="toggleIcon">dark_mode</span>
+            </button>
+            <a href="contacto.html" class="btn btn--primary btn--sm">Reservar ahora</a>
+        </div>
+
+        <button class="nav__hamburger" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+            <span></span><span></span><span></span>
+        </button>
+
+    </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" aria-label="Sección principal">
+    <img src="assets/machu-picchu.webp" alt="" class="hero__bg-img" aria-hidden="true">
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+        <div class="hero__eyebrow">Bienvenidos a ViajesMundo</div>
+        <h1 class="hero__title">Descubrí el mundo con <em>nosotros</em></h1>
+        <p class="hero__subtitle">Experiencias únicas, destinos increíbles y la mejor atención para que tu viaje sea inolvidable.</p>
+        <div class="hero__actions">
+            <a href="destinos.html" class="btn btn--primary btn--lg">Ver destinos</a>
+            <a href="contacto.html" class="btn btn--outline-light btn--lg">Contactarnos</a>
+        </div>
+    </div>
+    <div class="hero__scroll-indicator" aria-hidden="true">
+        <div class="scroll-dot"></div>
+        <span>Scroll</span>
+    </div>
+</section>
+
+<!-- destinos destacados -->
+<section class="section" aria-labelledby="destinos-title">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-header__eyebrow">Lo más visto</span>
+            <h2 class="section-header__title" id="destinos-title">Destinos Destacados</h2>
+            <p class="section-header__subtitle">Elegidos por miles de viajeros que confiaron en nosotros.</p>
+        </div>
+
+        <div class="destinos-grid">
+            <article class="destino-card destino-card--featured reveal">
+                <img src="assets/machu-picchu.webp" alt="Machu Picchu al amanecer" class="destino-card__image">
+                <div class="destino-card__overlay">
+                    <span class="badge badge--accent destino-card__badge">Cultural</span>
+                    <h3 class="destino-card__title">Machu Picchu</h3>
+                    <p class="destino-card__info">La ciudad perdida de los Incas, Patrimonio de la Humanidad.</p>
+                    <div class="destino-card__price">
+                        <div><small>Desde</small><span class="destino-card__price-amount">$1.250 USD</span></div>
+                        <a href="precios.html" class="btn btn--accent btn--sm">Ver plan</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="destino-card reveal reveal-delay-1">
+                <img src="assets/patagonia.webp" alt="Torres del Paine, Patagonia" class="destino-card__image">
+                <div class="destino-card__overlay">
+                    <span class="badge badge--primary destino-card__badge">Naturaleza</span>
+                    <h3 class="destino-card__title">Patagonia</h3>
+                    <p class="destino-card__info">Glaciares, montañas y lagos de cristal en el fin del mundo.</p>
+                    <div class="destino-card__price">
+                        <span class="destino-card__price-amount">$980 USD</span>
+                        <a href="precios.html" class="btn btn--accent btn--sm">Ver plan</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="destino-card reveal reveal-delay-2">
+                <img src="assets/rio-de-janeiro.webp" alt="Río de Janeiro, Brasil" class="destino-card__image">
+                <div class="destino-card__overlay">
+                    <span class="badge badge--success destino-card__badge">Sol y Playa</span>
+                    <h3 class="destino-card__title">Río de Janeiro</h3>
+                    <p class="destino-card__info">Copacabana, el Cristo Redentor y el carnaval más famoso del mundo.</p>
+                    <div class="destino-card__price">
+                        <span class="destino-card__price-amount">$850 USD</span>
+                        <a href="precios.html" class="btn btn--accent btn--sm">Ver plan</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="destino-card reveal reveal-delay-1">
+                <img src="assets/cataratas-iguazu.webp" alt="Cataratas del Iguazú" class="destino-card__image">
+                <div class="destino-card__overlay">
+                    <span class="badge badge--primary destino-card__badge">Naturaleza</span>
+                    <h3 class="destino-card__title">Cataratas del Iguazú</h3>
+                    <p class="destino-card__info">Una de las 7 Maravillas Naturales del mundo.</p>
+                    <div class="destino-card__price">
+                        <span class="destino-card__price-amount">$620 USD</span>
+                        <a href="precios.html" class="btn btn--accent btn--sm">Ver plan</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="destino-card reveal reveal-delay-2">
+                <img src="assets/buenos-aires.webp" alt="Buenos Aires, Argentina" class="destino-card__image">
+                <div class="destino-card__overlay">
+                    <span class="badge badge--accent destino-card__badge">Cultural</span>
+                    <h3 class="destino-card__title">Buenos Aires</h3>
+                    <p class="destino-card__info">Tango, gastronomía y arquitectura europea en el corazón de Sudamérica.</p>
+                    <div class="destino-card__price">
+                        <span class="destino-card__price-amount">$490 USD</span>
+                        <a href="precios.html" class="btn btn--accent btn--sm">Ver plan</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div style="text-align:center; margin-top:3rem;">
+            <a href="destinos.html" class="btn btn--outline">Ver todos los destinos</a>
+        </div>
+    </div>
+</section>
+
+<!-- contador animado -->
+<section class="counter-section" aria-label="Estadísticas">
+    <div class="container">
+        <div class="counter-grid">
+            <div class="counter-item">
+                <span class="counter-item__icon" aria-hidden="true">
+                    <span class="material-icons-round">flight</span>
+                </span>
+                <div class="counter-item__number">
+                    <span data-count="12500">0</span><span class="counter-item__suffix">+</span>
+                </div>
+                <p class="counter-item__label">Viajeros felices</p>
+            </div>
+            <div class="counter-item">
+                <span class="counter-item__icon" aria-hidden="true">
+                    <span class="material-icons-round">language</span>
+                </span>
+                <div class="counter-item__number">
+                    <span data-count="85">0</span><span class="counter-item__suffix">+</span>
+                </div>
+                <p class="counter-item__label">Destinos disponibles</p>
+            </div>
+            <div class="counter-item">
+                <span class="counter-item__icon" aria-hidden="true">
+                    <span class="material-icons-round">star</span>
+                </span>
+                <div class="counter-item__number">
+                    <span data-count="4">0</span><span class="counter-item__suffix">.9</span>
+                </div>
+                <p class="counter-item__label">Calificación promedio</p>
+            </div>
+            <div class="counter-item">
+                <span class="counter-item__icon" aria-hidden="true">
+                    <span class="material-icons-round">emoji_events</span>
+                </span>
+                <div class="counter-item__number">
+                    <span data-count="15">0</span><span class="counter-item__suffix">+</span>
+                </div>
+                <p class="counter-item__label">Años de experiencia</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- por que elegirnos -->
+<section class="section" aria-labelledby="features-title">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-header__eyebrow">Nuestras ventajas</span>
+            <h2 class="section-header__title" id="features-title">¿Por qué elegirnos?</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card reveal reveal-delay-1">
+                <span class="feature-card__icon" aria-hidden="true">
+                    <span class="material-icons-round">verified_user</span>
+                </span>
+                <h4 class="feature-card__title">Viaje garantizado</h4>
+                <p>Todos nuestros paquetes incluyen garantía de cancelación y asistencia 24/7 durante tu viaje.</p>
+            </div>
+            <div class="feature-card reveal reveal-delay-2">
+                <span class="feature-card__icon" aria-hidden="true">
+                    <span class="material-icons-round">credit_card</span>
+                </span>
+                <h4 class="feature-card__title">Precio justo</h4>
+                <p>Encontramos las mejores tarifas y te ofrecemos planes de financiación sin interés.</p>
+            </div>
+            <div class="feature-card reveal reveal-delay-3">
+                <span class="feature-card__icon" aria-hidden="true">
+                    <span class="material-icons-round">map</span>
+                </span>
+                <h4 class="feature-card__title">Itinerarios a medida</h4>
+                <p>Cada viaje es personalizado según tus preferencias, tiempos y presupuesto.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- carrusel de testimonios - solo CSS -->
+<section class="section testimonios-section" aria-labelledby="testimonios-title">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-header__eyebrow">Lo que dicen</span>
+            <h2 class="section-header__title" id="testimonios-title">Testimonios de Viajeros</h2>
+        </div>
+
+        <input type="radio" name="testimonio" id="t1" class="carousel-control" checked aria-label="Testimonio 1">
+        <input type="radio" name="testimonio" id="t2" class="carousel-control" aria-label="Testimonio 2">
+        <input type="radio" name="testimonio" id="t3" class="carousel-control" aria-label="Testimonio 3">
+
+        <div class="testimonios-carousel">
+            <div class="testimonios-track">
+                <div class="testimonio-slide">
+                    <article class="testimonio-card">
+                        <span class="testimonio-card__stars" aria-label="5 estrellas">★★★★★</span>
+                        <p class="testimonio-card__text">"El viaje a Machu Picchu superó todas mis expectativas. La organización fue impecable y el guía extraordinario. ¡Ya estoy planeando el siguiente!"</p>
+                        <div class="testimonio-card__avatar" aria-hidden="true">M</div>
+                        <p class="testimonio-card__name">María González</p>
+                        <p class="testimonio-card__location">Buenos Aires, Argentina</p>
+                    </article>
+                </div>
+                <div class="testimonio-slide">
+                    <article class="testimonio-card">
+                        <span class="testimonio-card__stars" aria-label="5 estrellas">★★★★★</span>
+                        <p class="testimonio-card__text">"Patagonia fue una experiencia transformadora. ViajesMundo gestionó todo perfectamente: alojamiento, traslados y actividades."</p>
+                        <div class="testimonio-card__avatar" aria-hidden="true">C</div>
+                        <p class="testimonio-card__name">Carlos Herrera</p>
+                        <p class="testimonio-card__location">Córdoba, Argentina</p>
+                    </article>
+                </div>
+                <div class="testimonio-slide">
+                    <article class="testimonio-card">
+                        <span class="testimonio-card__stars" aria-label="4 estrellas">★★★★☆</span>
+                        <p class="testimonio-card__text">"Las Cataratas del Iguazú me dejaron sin palabras. El paquete familiar fue perfecto para nosotros. Los chicos se divirtieron muchísimo."</p>
+                        <div class="testimonio-card__avatar" aria-hidden="true">L</div>
+                        <p class="testimonio-card__name">Laura Martínez</p>
+                        <p class="testimonio-card__location">Rosario, Argentina</p>
+                    </article>
+                </div>
+            </div>
+            <div class="carousel-dots" role="tablist" aria-label="Controles del carrusel">
+                <label for="t1" class="carousel-dot" role="tab" aria-label="Ver testimonio 1"></label>
+                <label for="t2" class="carousel-dot" role="tab" aria-label="Ver testimonio 2"></label>
+                <label for="t3" class="carousel-dot" role="tab" aria-label="Ver testimonio 3"></label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer__body">
+
+            <div class="footer__brand">
+                <a href="index.html" class="brand__logo" style="margin-bottom:1rem; display:inline-flex;">
+                    <img src="assets/logo.webp" alt="ViajesMundo" class="brand__logo-img">
+                    <div class="brand__icon" aria-hidden="true"><span class="material-icons-round">flight</span></div>
+                    <span class="brand__name">Viajes<span>Mundo</span></span>
+                </a>
+                <p>Tu compañía de confianza para explorar el mundo. Más de 15 años conectando personas con experiencias únicas.</p>
+                <nav aria-label="Redes sociales">
+                    <ul class="social-links">
+                        <li><a href="#" class="social-link" aria-label="Facebook" rel="noopener noreferrer">f</a></li>
+                        <li><a href="#" class="social-link" aria-label="Instagram" rel="noopener noreferrer">
+                            <span class="material-icons-round">photo_camera</span>
+                        </a></li>
+                        <li><a href="#" class="social-link" aria-label="Twitter / X" rel="noopener noreferrer">X</a></li>
+                        <li><a href="#" class="social-link" aria-label="YouTube" rel="noopener noreferrer">
+                            <span class="material-icons-round">play_circle</span>
+                        </a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="footer__col">
+                <h5>Destinos</h5>
+                <ul>
+                    <li><a href="destinos.html">Machu Picchu</a></li>
+                    <li><a href="destinos.html">Patagonia</a></li>
+                    <li><a href="destinos.html">Cataratas del Iguazú</a></li>
+                    <li><a href="destinos.html">Río de Janeiro</a></li>
+                    <li><a href="destinos.html">Buenos Aires</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__col">
+                <h5>Empresa</h5>
+                <ul>
+                    <li><a href="agencias.html">Nuestros agentes</a></li>
+                    <li><a href="precios.html">Planes y precios</a></li>
+                    <li><a href="blog.html">Blog de viajes</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__newsletter">
+                <h5>Newsletter</h5>
+                <p>Suscribite y recibí ofertas exclusivas, tips de viaje y novedades.</p>
+                <form class="newsletter-form" novalidate>
+                    <label for="newsletterEmail" style="display:none;">Email</label>
+                    <input type="email" id="newsletterEmail" name="email" placeholder="tu@email.com" required aria-label="Tu dirección de email">
+                    <button type="submit" class="btn btn--primary">Suscribirme</button>
+                </form>
+                <div class="newsletter-success" role="status" aria-live="polite">
+                    ✓ ¡Gracias por suscribirte!
+                </div>
+            </div>
+        </div>
+
+        <!-- mapa de openstreetmap, sin API key necesaria -->
+        <div class="footer__map">
+            <h5>Encontranos</h5>
+            <div class="map-container">
+                <iframe
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-65.3200%2C-24.2100%2C-65.2900%2C-24.1800&layer=mapnik"
+                    title="Ubicación de nuestra oficina en San Salvador de Jujuy"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p>© 2026 ViajesMundo. Todos los derechos reservados.</p>
+            <p>UNJu</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

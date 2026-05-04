@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explorá todos los destinos turísticos de ViajesMundo. Filtrá por categoría y encontrá el viaje perfecto para vos.">
+    <title>Destinos — ViajesMundo</title>
+    <link rel="icon" href="assets/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/destinos.css">
+</head>
+<body>
+
+<header class="site-header" role="banner">
+    <div class="header__inner container">
+        <div class="header__brand">
+            <a href="index.html" class="brand__logo" aria-label="ViajesMundo - Inicio">
+                    <img src="assets/logo.webp" alt="ViajesMundo" class="brand__logo-img">
+                <div class="brand__icon" aria-hidden="true"><span class="material-icons-round">flight</span></div>
+                <span class="brand__name">Viajes<span>Mundo</span></span>
+            </a>
+        </div>
+        <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+            <ul class="nav__list">
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="destinos.html" class="nav__link active">Destinos <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu">
+                        <div class="mega-menu__col"><h4>Por Tipo</h4><ul><li><a href="destinos.html">Cultural</a></li><li><a href="destinos.html">Naturaleza</a></li><li><a href="destinos.html">Sol y Playa</a></li><li><a href="destinos.html">Gastronómico</a></li></ul></div>
+                        <div class="mega-menu__col"><h4>Por Región</h4><ul><li><a href="destinos.html">América del Sur</a></li><li><a href="destinos.html">América Central</a></li><li><a href="destinos.html">El Caribe</a></li></ul></div>
+                        <div class="mega-menu__col"><h4>Populares</h4><ul><li><a href="destinos.html">Machu Picchu</a></li><li><a href="destinos.html">Patagonia</a></li><li><a href="destinos.html">Cataratas</a></li></ul></div>
+                    </div>
+                </li>
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="agencias.html" class="nav__link">Agencias <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu mega-menu--sm">
+                        <div class="mega-menu__col"><h4>Nuestros Agentes</h4><ul><li><a href="agencias.html">Ver todos</a></li><li><a href="agencias.html">Mejor calificados</a></li></ul></div>
+                        <div class="mega-menu__col"><h4>Servicios</h4><ul><li><a href="agencias.html">Paquetes armados</a></li><li><a href="agencias.html">Viajes a medida</a></li></ul></div>
+                    </div>
+                </li>
+                <li class="nav__item nav__item--has-dropdown">
+                    <a href="precios.html" class="nav__link">Precios <span class="material-icons-round nav__arrow" aria-hidden="true">expand_more</span></a>
+                    <div class="mega-menu mega-menu--sm">
+                        <div class="mega-menu__col"><h4>Planes</h4><ul><li><a href="precios.html">Plan Básico</a></li><li><a href="precios.html">Plan Premium</a></li><li><a href="precios.html">Plan Élite</a></li></ul></div>
+                        <div class="mega-menu__col"><h4>Comparar</h4><ul><li><a href="precios.html">Comparador de destinos</a></li><li><a href="precios.html">Ofertas del mes</a></li></ul></div>
+                    </div>
+                </li>
+                <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="header__actions">
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Activar modo oscuro">
+                <span class="material-icons-round" id="toggleIcon">dark_mode</span>
+            </button>
+            <a href="contacto.html" class="btn btn--primary btn--sm">Reservar ahora</a>
+        </div>
+        <button class="nav__hamburger" id="navToggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+</header>
+
+<div class="header-spacer"></div>
+
+<!-- hero interno de la pagina -->
+<section class="page-hero" aria-label="Encabezado de página">
+    <div class="container">
+        <h1>Destinos del Mundo</h1>
+        <p>Filtrá por categoría y encontrá el viaje que siempre soñaste.</p>
+    </div>
+</section>
+
+<!-- filtros css-only + galeria masonry -->
+<section class="section" aria-labelledby="galeria-title">
+    <div class="container">
+        <h2 class="section-header__title" id="galeria-title" style="text-align:center; margin-bottom:2rem;">Galería de Destinos</h2>
+
+        <!-- inputs radio ocultos - controlan los filtros via css con :checked -->
+        <input type="radio" name="filtro" id="filter-all"        class="filter-input" checked aria-label="Ver todos">
+        <input type="radio" name="filtro" id="filter-cultural"   class="filter-input" aria-label="Cultural">
+        <input type="radio" name="filtro" id="filter-naturaleza" class="filter-input" aria-label="Naturaleza">
+        <input type="radio" name="filtro" id="filter-playa"      class="filter-input" aria-label="Sol y Playa">
+        <input type="radio" name="filtro" id="filter-gastro"     class="filter-input" aria-label="Gastronómico">
+        <input type="radio" name="filtro" id="filter-religion"   class="filter-input" aria-label="Religioso">
+
+        <div class="filters-bar" role="group" aria-label="Filtros de categoría">
+            <label for="filter-all"        class="filter-label">Todos</label>
+            <label for="filter-cultural"   class="filter-label">Cultural</label>
+            <label for="filter-naturaleza" class="filter-label">Naturaleza</label>
+            <label for="filter-playa"      class="filter-label">Sol y Playa</label>
+            <label for="filter-gastro"     class="filter-label">Gastronómico</label>
+            <label for="filter-religion"   class="filter-label">Religioso</label>
+        </div>
+
+        <div class="masonry-grid">
+            <article class="destino-item destino-item--tall reveal" data-cat="cultural">
+                <img src="assets/machu-picchu.webp" alt="Machu Picchu, Perú" class="destino-item__img">
+                <span class="badge badge--accent destino-item__badge">Cultural</span>
+                <div class="destino-item__overlay"><h3 class="destino-item__title">Machu Picchu</h3><p class="destino-item__meta">Perú · Patrimonio UNESCO</p></div>
+            </article>
+            <article class="destino-item reveal reveal-delay-1" data-cat="playa">
+                <img src="assets/rio-de-janeiro.webp" alt="Río de Janeiro, Brasil" class="destino-item__img">
+                <span class="badge badge--success destino-item__badge">Sol y Playa</span>
+                <div class="destino-item__overlay"><h3 class="destino-item__title">Río de Janeiro</h3><p class="destino-item__meta">Brasil · Copacabana</p></div>
+            </article>
+            <article class="destino-item reveal reveal-delay-2" data-cat="naturaleza">
+                <img src="assets/patagonia.webp" alt="Patagonia, Argentina" class="destino-item__img">
+                <span class="badge badge--primary destino-item__badge">Naturaleza</span>
+                <div class="destino-item__overlay"><h3 class="destino-item__title">Patagonia</h3><p class="destino-item__meta">Argentina · Torres del Paine</p></div>
+            </article>
+            <article class="destino-item destino-item--wide reveal" data-cat="naturaleza">
+                <img src="assets/cataratas-iguazu.webp" alt="Cataratas del Iguazú" class="destino-item__img">
+                <span class="badge badge--primary destino-item__badge">Naturaleza</span>
+                <div class="destino-item__overlay"><h3 class="destino-item__title">Cataratas del Iguazú</h3><p class="destino-item__meta">Argentina / Brasil · 7 Maravillas Naturales</p></div>
+            </article>
+            <article class="destino-item reveal reveal-delay-1" data-cat="gastro">
+                <img src="assets/buenos-aires.webp" alt="Buenos Aires" class="destino-item__img">
+                <span class="badge badge--accent destino-item__badge">Gastronómico</span>
+                <div class="destino-item__overlay"><h3 class="destino-item__title">Buenos Aires</h3><p class="destino-item__meta">Argentina · Gastronomía y Tango</p></div>
+            </article>
+            <article class="destino-item reveal reveal-delay-2" data-cat="cultural">
+                <img src="assets/cusco-peru.webp" alt="Cusco, Perú" class="destino-item__img">
+                <span class="badge badge--accent destino-item__badge">Cultural</span>
+                <div class="destino-item__overlay"><h3 class="destino-item__title">Cusco</h3><p class="destino-item__meta">Perú · Capital Inca</p></div>
+            </article>
+            <article class="destino-item destino-item--tall reveal" data-cat="religion">
+                <img src="assets/santuario-lujan.webp" alt="Santuario de Luján" class="destino-item__img">
+                <span class="badge badge--danger destino-item__badge">Religioso</span>
+                <div class="destino-item__overlay"><h3 class="destino-item__title">Santuario de Luján</h3><p class="destino-item__meta">Argentina · Basílica Nacional</p></div>
+            </article>
+            <article class="destino-item reveal reveal-delay-1" data-cat="playa">
+                <img src="assets/cartagena-de-indias.webp" alt="Cartagena de Indias" class="destino-item__img">
+                <span class="badge badge--success destino-item__badge">Sol y Playa</span>
+                <div class="destino-item__overlay"><h3 class="destino-item__title">Cartagena de Indias</h3><p class="destino-item__meta">Colombia · Ciudad Amurallada</p></div>
+            </article>
+            <article class="destino-item reveal reveal-delay-2" data-cat="gastro">
+                <img src="assets/carnaval-oruro-bolivia.webp" alt="Carnaval de Oruro" class="destino-item__img">
+                <span class="badge badge--primary destino-item__badge">Cultural</span>
+                <div class="destino-item__overlay"><h3 class="destino-item__title">Carnaval de Oruro</h3><p class="destino-item__meta">Bolivia · Patrimonio UNESCO</p></div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- tabla de precios -->
+<section class="table-section section--sm" aria-labelledby="tabla-title">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-header__eyebrow">Tarifas</span>
+            <h2 class="section-header__title" id="tabla-title">Precios por Destino</h2>
+            <p class="section-header__subtitle">Precios en USD por persona. Consulte por paquetes familiares y grupos.</p>
+        </div>
+        <div class="table-responsive">
+            <table class="price-table" aria-label="Tabla de precios por destino">
+                <thead>
+                    <tr>
+                        <th scope="col">Destino</th>
+                        <th scope="col">País</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Duración</th>
+                        <th scope="col">Precio base</th>
+                        <th scope="col">Incluye vuelo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="col-destino">Machu Picchu</td><td>Perú</td><td><span class="badge badge--accent">Cultural</span></td><td>7 días</td><td class="col-price">$1.250</td><td>✓</td></tr>
+                    <tr><td class="col-destino">Patagonia</td><td>Argentina</td><td><span class="badge badge--primary">Naturaleza</span></td><td>10 días</td><td class="col-price">$980</td><td>✓</td></tr>
+                    <tr><td class="col-destino">Río de Janeiro</td><td>Brasil</td><td><span class="badge badge--success">Playa</span></td><td>6 días</td><td class="col-price">$850</td><td>✓</td></tr>
+                    <tr><td class="col-destino">Cataratas del Iguazú</td><td>Arg/Brasil</td><td><span class="badge badge--primary">Naturaleza</span></td><td>4 días</td><td class="col-price">$620</td><td>✓</td></tr>
+                    <tr><td class="col-destino">Buenos Aires</td><td>Argentina</td><td><span class="badge badge--accent">Cultural</span></td><td>4 días</td><td class="col-price">$490</td><td>—</td></tr>
+                    <tr><td class="col-destino">Cusco</td><td>Perú</td><td><span class="badge badge--accent">Cultural</span></td><td>5 días</td><td class="col-price">$720</td><td>✓</td></tr>
+                    <tr><td class="col-destino">Cartagena de Indias</td><td>Colombia</td><td><span class="badge badge--success">Playa</span></td><td>5 días</td><td class="col-price">$680</td><td>✓</td></tr>
+                    <tr><td class="col-destino">Santuario de Luján</td><td>Argentina</td><td><span class="badge badge--danger">Religioso</span></td><td>2 días</td><td class="col-price">$180</td><td>—</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="container">
+        <div class="footer__body">
+            <div class="footer__brand">
+                <a href="index.html" class="brand__logo" style="margin-bottom:1rem; display:inline-flex;">
+                        <img src="assets/logo.webp" alt="ViajesMundo" class="brand__logo-img">
+                    <div class="brand__icon" aria-hidden="true"><span class="material-icons-round">flight</span></div>
+                    <span class="brand__name">Viajes<span>Mundo</span></span>
+                </a>
+                <p>Tu compañía de confianza para explorar el mundo.</p>
+                <nav aria-label="Redes sociales"><ul class="social-links">
+                    <li><a href="#" class="social-link" aria-label="Facebook">f</a></li>
+                    <li><a href="#" class="social-link" aria-label="Instagram"><span class="material-icons-round">photo_camera</span></a></li>
+                    <li><a href="#" class="social-link" aria-label="Twitter">X</a></li>
+                    <li><a href="#" class="social-link" aria-label="YouTube"><span class="material-icons-round">play_circle</span></a></li>
+                </ul></nav>
+            </div>
+            <div class="footer__col"><h5>Destinos</h5><ul><li><a href="destinos.html">Machu Picchu</a></li><li><a href="destinos.html">Patagonia</a></li><li><a href="destinos.html">Cataratas</a></li><li><a href="destinos.html">Río de Janeiro</a></li></ul></div>
+            <div class="footer__col"><h5>Empresa</h5><ul><li><a href="agencias.html">Agentes</a></li><li><a href="precios.html">Precios</a></li><li><a href="blog.html">Blog</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+            <div class="footer__newsletter">
+                <h5>Newsletter</h5><p>Ofertas exclusivas en tu email.</p>
+                <form class="newsletter-form" novalidate>
+                    <input type="email" placeholder="tu@email.com" required aria-label="Email">
+                    <button type="submit" class="btn btn--primary">Suscribirme</button>
+                </form>
+                <div class="newsletter-success" role="status">✓ ¡Gracias por suscribirte!</div>
+            </div>
+        </div>
+        <div class="footer__map"><h5>Encontranos</h5><div class="map-container"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-65.3200%2C-24.2100%2C-65.2900%2C-24.1800&layer=mapnik" title="Ubicación de nuestra oficina" loading="lazy" allowfullscreen></iframe></div></div>
+        <div class="footer__bottom"><p>© 2026 ViajesMundo. Todos los derechos reservados.</p><p>UNJu</p></div>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

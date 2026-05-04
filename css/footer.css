@@ -1,0 +1,168 @@
+/* footer.css - pie de pagina */
+
+.site-footer {
+    background: var(--color-primary);
+    color: rgba(255,255,255,0.8);
+    padding-top: var(--space-16);
+}
+
+/* ===== cuerpo del footer (4 columnas en desktop) ===== */
+.footer__body {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: var(--space-10);
+    padding-bottom: var(--space-12);
+}
+
+.footer__brand .brand__logo { margin-bottom: var(--space-4); }
+.footer__brand .brand__name { color: #fff; }
+.footer__brand p {
+    font-size: var(--font-size-sm);
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: var(--space-5);
+}
+
+/* iconos de redes sociales */
+.social-links { display: flex; gap: var(--space-3); }
+
+.social-link {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-base);
+}
+/* el translateY(-3px) simula que el boton "levanta" al hacer hover */
+.social-link:hover {
+    background: var(--color-secondary);
+    color: #fff;
+    border-color: var(--color-secondary);
+    transform: translateY(-3px) scale(1.1);
+}
+.social-link .material-icons-round { font-size: 1rem; }
+
+/* columnas de links del footer */
+.footer__col h5 {
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-5);
+}
+.footer__col ul { list-style: none; }
+.footer__col ul li { margin-bottom: var(--space-2); }
+.footer__col ul li a {
+    color: rgba(255,255,255,0.6);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    /* el padding-left animado da un efecto de que el link "avanza" */
+    transition: color var(--transition-fast), padding-left var(--transition-fast);
+    display: inline-block;
+}
+.footer__col ul li a:hover { color: var(--color-accent); padding-left: var(--space-2); }
+
+/* ===== newsletter ===== */
+.footer__newsletter h5 {
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-3);
+}
+.footer__newsletter p {
+    font-size: var(--font-size-sm);
+    color: rgba(255,255,255,0.6);
+    margin-bottom: var(--space-4);
+}
+.newsletter-form { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.newsletter-form input[type="email"] {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    font-size: var(--font-size-sm);
+    font-family: var(--font-body);
+    transition: border-color var(--transition-fast), background var(--transition-fast);
+    outline: none;
+}
+.newsletter-form input[type="email"]::placeholder { color: rgba(255,255,255,0.35); }
+.newsletter-form input[type="email"]:focus {
+    border-color: var(--color-secondary);
+    background: rgba(0,180,216,0.08);
+}
+.newsletter-form .btn { width: 100%; }
+
+/* mensaje de exito al suscribirse - oculto hasta que el js lo muestre */
+.newsletter-success {
+    display: none;
+    padding: var(--space-3);
+    background: rgba(45,198,83,0.15);
+    border: 1px solid rgba(45,198,83,0.4);
+    border-radius: var(--border-radius);
+    color: var(--color-success);
+    font-size: var(--font-size-sm);
+    text-align: center;
+}
+
+/* ==== mapa embebido ==== */
+.footer__map {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+}
+.footer__map h5 {
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-4);
+    text-align: center;
+}
+.map-container {
+    width: 100%; height: 220px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.map-container iframe {
+    width: 100%; height: 100%;
+    border: none; display: block;
+    /* filtro sutil para que el mapa no choque tanto con el fondo oscuro */
+    filter: grayscale(20%) invert(0.05);
+}
+
+/* ===== linea inferior de copyright ===== */
+.footer__bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-block: var(--space-5);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+.footer__bottom p { font-size: var(--font-size-xs); color: rgba(255,255,255,0.4); margin: 0; }
+.footer__bottom a { color: var(--color-secondary); }
+
+/* ===== responsive ===== */
+@media (max-width: 1024px) {
+    .footer__body { grid-template-columns: 1fr 1fr; gap: var(--space-8); }
+    .footer__brand { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+    .footer__body { grid-template-columns: 1fr; }
+    .footer__bottom { flex-direction: column; text-align: center; }
+}

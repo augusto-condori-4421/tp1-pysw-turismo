@@ -1,0 +1,470 @@
+/* index.css - estilos especificos de la pagina principal */
+
+/* hero de pantalla completa con imagen de fondo */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* imagen de fondo del hero - el usuario coloca img/hero-bg.jpg
+   cubre toda la seccion con object-fit cover, igual que un video */
+.hero__bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+/* capa semitransparente oscura sobre el video para que el texto se lea bien */
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(11, 28, 45, 0.5) 0%,
+            rgba(11, 28, 45, 0.65) 60%,
+            rgba(11, 28, 45, 0.9) 100%);
+    z-index: 1;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding-inline: var(--space-6);
+}
+
+.hero__eyebrow {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-4);
+    /* animacion de entrada */
+    animation: fadeSlideDown 0.8s ease forwards;
+}
+
+.hero__title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: var(--space-6);
+    animation: fadeSlideDown 0.8s 0.15s ease both;
+}
+
+.hero__title em {
+    font-style: italic;
+    color: var(--color-secondary);
+}
+
+.hero__subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin-inline: auto;
+    margin-bottom: var(--space-8);
+    animation: fadeSlideDown 0.8s 0.3s ease both;
+}
+
+.hero__actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeSlideDown 0.8s 0.45s ease both;
+}
+
+/* el puntito animado que invita a hacer scroll */
+.hero__scroll-indicator {
+    position: absolute;
+    bottom: var(--space-8);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    animation: fadeSlideDown 1.2s 0.8s ease both;
+}
+
+.scroll-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-secondary);
+    animation: scrollBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(8px);
+        opacity: 0.4;
+    }
+}
+
+@keyframes fadeSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- grid de destinos en home --- */
+.destinos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+}
+
+.destino-card {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    background: var(--bg-surface-alt);
+}
+
+/* la card destacada ocupa 2 filas */
+.destino-card--featured {
+    grid-row: span 2;
+    aspect-ratio: auto;
+}
+
+.destino-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.destino-card:hover .destino-card__image {
+    transform: scale(1.06);
+}
+
+/* el overlay tiene degradado de abajo hacia arriba
+   invisible por defecto, aparece al hover */
+.destino-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11, 28, 45, 0.92) 0%, rgba(11, 28, 45, 0.1) 70%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--space-5);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.destino-card:hover .destino-card__overlay,
+.destino-card--featured .destino-card__overlay {
+    opacity: 1;
+}
+
+.destino-card__badge {
+    margin-bottom: var(--space-2);
+    width: fit-content;
+}
+
+.destino-card__title {
+    color: #fff;
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-2);
+}
+
+.destino-card__info {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-4);
+}
+
+.destino-card__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+}
+
+.destino-card__price small {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: var(--font-size-xs);
+}
+
+.destino-card__price-amount {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+/* --- contador de estadisticas --- */
+.counter-section {
+    background: var(--color-primary);
+    padding-block: var(--space-16);
+}
+
+.counter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+}
+
+.counter-item {
+    text-align: center;
+    color: #fff;
+}
+
+.counter-item__icon {
+    display: block;
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-3);
+    /* el material icon hereda el font-size del padre */
+}
+
+.counter-item__icon .material-icons-round {
+    font-size: inherit;
+}
+
+.counter-item__number {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    font-family: var(--font-body);
+    color: #fff;
+    line-height: 1;
+    margin-bottom: var(--space-2);
+}
+
+.counter-item__suffix {
+    color: var(--color-accent);
+}
+
+.counter-item__label {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: var(--font-size-sm);
+}
+
+/* --- cards de ventajas / features --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+}
+
+.feature-card {
+    text-align: center;
+    padding: var(--space-8) var(--space-6);
+    background: var(--bg-surface);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.feature-card__icon {
+    display: block;
+    font-size: 2.5rem;
+    color: var(--color-secondary);
+    margin-bottom: var(--space-4);
+}
+
+.feature-card__icon .material-icons-round {
+    font-size: inherit;
+}
+
+.feature-card__title {
+    margin-bottom: var(--space-3);
+    font-size: var(--font-size-xl);
+}
+
+/* --- seccion de testimonios con carrusel css-only ---
+   el truco: los slides cambian con transform: translateX usando el selector :checked
+   cada radio al chequearse mueve el track horizontalmente al slide correspondiente */
+.testimonios-section {
+    background: var(--bg-surface-alt);
+}
+
+.carousel-control {
+    display: none;
+}
+
+.testimonios-carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+.testimonios-track {
+    display: flex;
+    transition: transform var(--transition-slow);
+}
+
+.testimonio-slide {
+    min-width: 100%;
+}
+
+/* cuando cada radio esta chequeado, mueve el track al slide correspondiente */
+#t1:checked~.testimonios-carousel .testimonios-track {
+    transform: translateX(0%);
+}
+
+#t2:checked~.testimonios-carousel .testimonios-track {
+    transform: translateX(-100%);
+}
+
+#t3:checked~.testimonios-carousel .testimonios-track {
+    transform: translateX(-200%);
+}
+
+.testimonio-card {
+    max-width: 680px;
+    margin-inline: auto;
+    background: var(--bg-surface);
+    border-radius: var(--border-radius-xl);
+    padding: var(--space-10);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.testimonio-card__stars {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: var(--space-4);
+    letter-spacing: 4px;
+}
+
+.testimonio-card__text {
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: var(--space-6);
+}
+
+.testimonio-card__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+    color: #fff;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    margin-bottom: var(--space-3);
+    border: 3px solid var(--color-secondary);
+}
+
+.testimonio-card__name {
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.testimonio-card__location {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    margin: 0;
+}
+
+/* puntitos del carrusel */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-top: var(--space-8);
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: background var(--transition-base), transform var(--transition-base);
+}
+
+/* el punto activo corresponde al radio chequeado */
+#t1:checked~.testimonios-carousel .carousel-dots label[for="t1"],
+#t2:checked~.testimonios-carousel .carousel-dots label[for="t2"],
+#t3:checked~.testimonios-carousel .carousel-dots label[for="t3"] {
+    background: var(--color-secondary);
+    transform: scale(1.4);
+}
+
+/* --- responsive --- */
+@media (max-width: 1024px) {
+    .destinos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .counter-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .destino-card--featured {
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .destinos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .counter-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-5);
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonio-card {
+        padding: var(--space-6);
+    }
+}
