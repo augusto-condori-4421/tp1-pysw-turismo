@@ -1,9 +1,14 @@
 # ViajesMundo — Sitio Web de Turismo
 
 **Alumno:** Condori Augusto René
+
 **Año:** 2026  
+
 **Institución:** UNJu 
+
 **Materia:** Programación y Servicios Web
+
+**URL del Sitio:** [viajes-mundo-turismo.netlify.app/](https://viajes-mundo-turismo.netlify.app/)
 
 ---
 
@@ -58,6 +63,5 @@ Se trato de usar el minimo javascript sin dejar de darle una buena imagen con ef
 - **Tabla de precios con tooltips CSS** — usando el atributo `data-tooltip` y el
   pseudo-elemento `::after` con `content: attr(data-tooltip)`.
 
-Se considero hacer ciertos componentes o animaciones, como la animacion de entrada de los elementos al hacer scroll, o el carrusel de testimonios, con librerias, al igual que otras muchas cosas mas, pero se termino haciendo con solo lo visto en clase.
+#### Se considero hacer ciertos componentes o animaciones, como la animacion de entrada de los elementos al hacer scroll, o el carrusel de testimonios, con librerias, al igual que otras muchas cosas mas, pero se termino haciendo con solo lo visto en clase.
 ---
-
